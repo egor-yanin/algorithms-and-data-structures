@@ -1,5 +1,5 @@
 import time
-from t3 import main
+from task3 import main
 
 
 start = time.perf_counter()
