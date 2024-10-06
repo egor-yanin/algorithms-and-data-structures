@@ -21,7 +21,7 @@ def applying(n1, n2):
 
 
 start = time.perf_counter()
-with open('input.txt') as fin, open('output.txt', 'w') as fout:
+with open('../tests/input.txt') as fin, open('../tests/output.txt', 'w') as fout:
     a, b = fin.readline().split()
     lst1 = [int(x) for x in a]
     lst2 = [int(x) for x in b]
