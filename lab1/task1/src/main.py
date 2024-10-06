@@ -16,5 +16,5 @@ start = time.perf_counter()
 with open('../tests/input.txt') as fin, open('../tests/output.txt', 'w') as fout:
     n = int(fin.readline())
     A = [int(x) for x in fin.readline().split()]
+    print('Затрачено времени: ', time.perf_counter() - start, 'сек.')
     fout.write(' '.join([str(x) for x in insertion(A)]))
-print('Затрачено времени: ', time.perf_counter() - start, 'сек.')
