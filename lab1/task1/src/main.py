@@ -1,4 +1,5 @@
 import time
+import psutil
 
 
 def insertion(lst):
@@ -17,4 +18,5 @@ with open('../tests/input.txt') as fin, open('../tests/output.txt', 'w') as fout
     n = int(fin.readline())
     A = [int(x) for x in fin.readline().split()]
     print('Затрачено времени: ', time.perf_counter() - start, 'сек.')
+    print(f"Память: {psutil.Process().memory_info().rss / 1024 ** 2:.2f} МБ")
     fout.write(' '.join([str(x) for x in insertion(A)]))
