@@ -4,8 +4,8 @@ from math import floor
 def merge(lst, p, q, r):
     n1 = q - p + 1
     n2 = r - q
-    left = [lst[p + i - 1] for i in range(1, n1 + 1)]
-    right = [lst[q + j] for j in range(1, n2 + 1)]
+    left = [lst[p + i] for i in range(0, n1)]
+    right = [lst[q + j + 1] for j in range(0, n2)]
     i, j = 0, 0
     for k in range(p, r + 1):
         if i == len(left):
