@@ -1,3 +1,6 @@
+from utils import read_array, write_vars
+
+
 def addition(A, B, sign=True):
     if len(A) != len(B):
         if len(A) > len(B):
@@ -35,8 +38,6 @@ def multiply(A, B):
 
 
 def main(file='input.txt'):
-    with open(file, encoding='UTF-8') as fin, open('../tests/output.txt', 'w') as fout:
-        n = int(fin.readline())
-        A = tuple(int(x) for x in fin.readline().split())
-        B = tuple(int(x) for x in fin.readline().split())
-        print(*multiply(A, B), file=fout, sep=' ')
+    input_data = read_array(file, 1, 2)
+    A, B = map(tuple, input_data)
+    write_vars('../tests/output.txt', multiply(A, B))

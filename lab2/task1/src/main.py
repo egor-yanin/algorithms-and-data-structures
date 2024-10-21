@@ -1,4 +1,5 @@
 from math import floor
+from utils import read_n_array, write_vars
 
 
 def merge(lst, p, q, r):
@@ -35,7 +36,5 @@ def merge_sort(lst, p, r):
 
 
 def main(file):
-    with open(file) as fin, open('../tests/output.txt', 'w') as fout:
-        n = int(fin.readline())
-        m = [int(x) for x in fin.readline().split()]
-        print(*merge_sort(m, 0, n - 1), file=fout, sep=' ')
+    m, n = read_n_array(file)[0]
+    write_vars('../tests/output.txt', merge_sort(m, 0, n - 1))

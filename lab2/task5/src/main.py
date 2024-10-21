@@ -1,3 +1,6 @@
+from utils import read_n_array, write_vars
+
+
 def majority(lst):
     n = len(lst)
     mid = n // 2
@@ -17,11 +20,9 @@ def majority(lst):
 
 
 def main(file='input.txt'):
-    with open(file) as fin, open('output.txt', 'w') as fout:
-        N = int(fin.readline())
-        A = [int(x) for x in fin.readline().split()]
-        m = majority(A)
-        if m[0] is None:
-            fout.write('0')
-        else:
-            fout.write('1')
+    A = read_n_array(file)[0][0]
+    m = majority(A)
+    if m[0] is None:
+        write_vars('../tests/output.txt', '0')
+    else:
+        write_vars('../tests/output.txt', '1')
