@@ -1,5 +1,5 @@
 from math import floor
-from utils import read_n_array, write_vars
+from lab2.utils import read_array, write_vars
 
 
 def merge(lst, p, q, r):
@@ -36,5 +36,5 @@ def merge_sort(lst, p, r):
 
 
 def main(file):
-    m, n = read_n_array(file)[0]
+    m, n = read_array(file, with_len=True)[0]
     write_vars('../tests/output.txt', merge_sort(m, 0, n - 1))

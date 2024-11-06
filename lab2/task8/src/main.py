@@ -1,4 +1,4 @@
-from utils import read_array, write_vars
+from lab2.utils import read_array, write_vars
 
 
 def addition(A, B, sign=True):

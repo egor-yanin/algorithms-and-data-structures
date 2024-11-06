@@ -1,5 +1,5 @@
 from math import floor
-from utils import read_n_array, write_vars
+from lab2.utils import read_array, write_vars
 
 
 def binary_search(lst, low, high, key):
@@ -17,7 +17,7 @@ def binary_search(lst, low, high, key):
 
 
 def main(file='input.txt'):
-    input_data = read_n_array(file, num=2)
+    input_data = read_array(file, num=2, with_len=True)
     a, b = input_data[0][0], input_data[1][0]
     ans = []
     for i in b:

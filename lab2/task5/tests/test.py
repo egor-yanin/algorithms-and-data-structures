@@ -1,5 +1,5 @@
 from lab2.task5.src.main import main
-from utils import read_int
+from lab2.utils import read_int
 import psutil
 import time
 import unittest

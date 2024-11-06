@@ -1,4 +1,4 @@
-from utils import read_n_array, write_vars
+from lab2.utils import read_array, write_vars
 
 
 def majority(lst):
@@ -20,7 +20,7 @@ def majority(lst):
 
 
 def main(file='input.txt'):
-    A = read_n_array(file)[0][0]
+    A = read_array(file, with_len=True)[0][0]
     m = majority(A)
     if m[0] is None:
         write_vars('../tests/output.txt', '0')
