@@ -32,13 +32,22 @@ def write_vars(file, *args, mode='w'):
                 fout.write(f'{i}\n')
 
 
+def is_sorted(lst):
+    return all(lst[i] <= lst[i + 1] for i in range(len(lst) - 1))
+
+
 def print_time_memory(task_func):
-    tracemalloc.start()
-    start_time = time.time()
+    def wrapper(*args, **kwargs):
 
-    task_func()
+        tracemalloc.start()
+        start_time = time.time()
 
-    print("memory usage: ", tracemalloc.get_traced_memory()[1], " bytes")
-    print("--- %s seconds ---" % (time.time() - start_time))
-    print("\n")
-    tracemalloc.stop()
+        result = task_func(*args, *kwargs)
+
+        print("memory usage: ", tracemalloc.get_traced_memory()[1], " bytes")
+        print("--- %s seconds ---" % (time.time() - start_time))
+        print("\n")
+        tracemalloc.stop()
+
+        return result
+    return wrapper

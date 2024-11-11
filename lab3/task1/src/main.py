@@ -1,5 +1,8 @@
-from lab3.utils import read_array, write_vars
+from lab3.utils import read_array, write_vars, print_time_memory
 import random
+import sys
+
+sys.setrecursionlimit(10**6)
 
 
 def partition(lst, start, end):
@@ -37,21 +40,32 @@ def quick_sort(lst, start, end):
         quick_sort(lst, q + 1, end)
 
 
-def randomized_partition(lst, start, end):
+def randomized_partition(lst, start, end, part3=False):
     i = random.randint(start, end)
     lst[start], lst[i] = lst[i], lst[start]
-    return partition(lst, start, end)
+    if part3:
+        return partition3(lst, start, end)
+    else:
+        return partition(lst, start, end)
 
 
-def randomized_quick_sort(lst, start, end):
+def randomized_quick_sort(lst, start, end, part3=False):
     if start < end:
-        q = randomized_partition(lst, start, end)
+        if part3:
+            q, p = randomized_partition(lst, start, end, part3=True)
+        else:
+            q = randomized_partition(lst, start, end, part3=False)
+            p = q
         randomized_quick_sort(lst, start, q - 1)
-        randomized_quick_sort(lst, q + 1, end)
+        randomized_quick_sort(lst, p + 1, end)
+
+
+@print_time_memory
+def main():
+    a = read_array('../xtxt/input.txt')[0][0]
+    randomized_quick_sort(a, 0, len(a) - 1)
+    write_vars('../xtxt/output.txt', a)
 
 
 if __name__ == '__main__':
-    a = read_array('input.txt')[0][0]
-    quick_sort(a, 0, len(a) - 1)
-    write_vars('output.txt', a)
-
+    main()
