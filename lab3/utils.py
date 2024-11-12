@@ -2,20 +2,31 @@ import time
 import tracemalloc
 
 
-def read_array(file, start=0, num=1, with_len=True) -> list:
+def read_array(file, start=0, num=1, with_len=True, integer=True) -> list:
     res = []
     with open(file) as fin:
         lines = fin.readlines()[start:]
         if with_len:
             for s in range(0, num * 2, 2):
                 ln = int(lines[s])
-                lst = [int(x) for x in lines[s + 1].split()]
+                if integer:
+                    lst = [int(x) for x in lines[s + 1].split()]
+                else:
+                    lst = [x for x in lines[s + 1].split()]
                 res.append([lst, ln])
         else:
             for s in range(num):
-                lst = [int(x) for x in lines[s].split()]
+                if integer:
+                    lst = [int(x) for x in lines[s].split()]
+                else:
+                    lst = [x for x in lines[s].split()]
                 res.append(lst)
     return res
+
+
+def read_str_lines(file, num=1, start=0):
+    with open(file) as f:
+        return [x.strip() for x in f.readlines()[start:start+num]]
 
 
 def read_int(file, line=0) -> int:
