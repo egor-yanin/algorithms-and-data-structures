@@ -1,8 +1,12 @@
 from lab3.utils import read_array, write_vars, print_time_memory
 import random
 import sys
+import os
 
 sys.setrecursionlimit(10**6)
+current_script_dir = os.path.dirname(os.path.abspath(__file__))
+file_input = os.path.join(current_script_dir, '../textsf/input.txt')
+file_output = os.path.join(current_script_dir, '../textsf/output.txt')
 
 
 def partition(lst, start, end):
@@ -62,9 +66,9 @@ def randomized_quick_sort(lst, start, end, part3=False):
 
 @print_time_memory
 def task1():
-    a = read_array('../xtxt/input.txt')[0][0]
+    a = read_array(file_input)[0][0]
     randomized_quick_sort(a, 0, len(a) - 1)
-    write_vars('../xtxt/output.txt', a)
+    write_vars(file_output, a)
 
 
 if __name__ == '__main__':

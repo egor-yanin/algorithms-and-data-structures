@@ -18,8 +18,8 @@ def h_index(citations):
 
 
 def task5():
-    arr = read_array('../xtxt/input.txt', with_len=False)[0]
-    write_vars('../xtxt/output.txt', h_index(arr))
+    arr = read_array('../textsf/input.txt', with_len=False)[0]
+    write_vars('../textsf/output.txt', h_index(arr))
 
 
 if __name__ == '__main__':

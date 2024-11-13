@@ -9,14 +9,14 @@ def pugalo_sort(lst, k):
 
 
 def task3():
-    data = read_array('../xtxt/input.txt', num=2, with_len=False)
+    data = read_array('../textsf/input.txt', num=2, with_len=False)
     n, k = data[0]
     a = data[1]
     pugalo_sort(a, k)
     if is_sorted(a):
-        write_vars('../xtxt/output.txt', 'YES')
+        write_vars('../textsf/output.txt', 'YES')
     else:
-        write_vars('../xtxt/output.txt', 'NO')
+        write_vars('../textsf/output.txt', 'NO')
 
 
 if __name__ == '__main__':

@@ -21,7 +21,7 @@ def task7():
     fin = '../xtxt/input.txt'
     n, m, k = read_array(fin, with_len=False)[0]
     lst = read_str_lines(fin, start=1, num=n)
-    write_vars('../xtxt/output.txt', radix_sort(lst, k))
+    write_vars('../textsf/output.txt', radix_sort(lst, k))
 
 
 if __name__ == '__main__':
