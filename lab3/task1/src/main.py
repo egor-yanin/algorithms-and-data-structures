@@ -5,8 +5,8 @@ import os
 
 sys.setrecursionlimit(10**6)
 current_script_dir = os.path.dirname(os.path.abspath(__file__))
-file_input = os.path.join(current_script_dir, '../textsf/input.txt')
-file_output = os.path.join(current_script_dir, '../textsf/output.txt')
+file_input = os.path.join(current_script_dir, '../txtf/input.txt')
+file_output = os.path.join(current_script_dir, '../txtf/output.txt')
 
 
 def partition(lst, start, end):

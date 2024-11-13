@@ -5,14 +5,14 @@ import os
 
 
 current_script_dir = os.path.dirname(os.path.abspath(__file__))
-file_input = os.path.join(current_script_dir, '../textsf/input.txt')
-file_output = os.path.join(current_script_dir, '../textsf/output.txt')
+file_input = os.path.join(current_script_dir, '../txtf/input.txt')
+file_output = os.path.join(current_script_dir, '../txtf/output.txt')
 
 
 class TestCase(unittest.TestCase):
 
     def test_should_task3(self):
-        path = os.path.join(current_script_dir, '../textsf/samples.txt')
+        path = os.path.join(current_script_dir, '../txtf/samples.txt')
         data = read_array(path, num=4, with_len=False)
         expected_result = ['NO', 'YES']
 

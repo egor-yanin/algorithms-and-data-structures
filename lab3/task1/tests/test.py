@@ -5,8 +5,8 @@ import os
 
 
 current_script_dir = os.path.dirname(os.path.abspath(__file__))
-file_input = os.path.join(current_script_dir, '../textsf/input.txt')
-file_output = os.path.join(current_script_dir, '../textsf/output.txt')
+file_input = os.path.join(current_script_dir, '../txtf/input.txt')
+file_output = os.path.join(current_script_dir, '../txtf/output.txt')
 
 
 class TestCase(unittest.TestCase):
@@ -14,7 +14,7 @@ class TestCase(unittest.TestCase):
     def test_should_partition3(self):
         expected_partition = [3, 5]
         expected_result = [1, 2, 1, 3, 3, 3, 5, 4]
-        file = os.path.join(current_script_dir, '../textsf/partition3test.txt')
+        file = os.path.join(current_script_dir, '../txtf/partition3test.txt')
 
         a1 = read_array(file)[0][0]
         m1, m2 = partition3(a1, 0, len(a1) - 1)
@@ -24,7 +24,7 @@ class TestCase(unittest.TestCase):
 
     def test_should_randomized_quick_sort(self):
         files = ['worst_case.txt', 'average_case.txt', 'best_case.txt']
-        paths = [os.path.join(current_script_dir, f'../textsf/{f}') for f in files]
+        paths = [os.path.join(current_script_dir, f'../txtf/{f}') for f in files]
 
         for f in paths:
             for a, n in read_array(f, num=2, with_len=True):
@@ -38,7 +38,7 @@ class TestCase(unittest.TestCase):
 
     def test_should_quick_sort(self):
         files = ['worst_case.txt', 'average_case.txt', 'best_case.txt']
-        paths = [os.path.join(current_script_dir, f'../textsf/{f}') for f in files]
+        paths = [os.path.join(current_script_dir, f'../txtf/{f}') for f in files]
 
         for f in paths:
             for a, n in read_array(f, num=2, with_len=True):
