@@ -1,4 +1,10 @@
 from lab3.utils import read_array, write_vars, print_time_memory, read_str_lines
+import os
+
+
+current_script_dir = os.path.dirname(os.path.abspath(__file__))
+file_input = os.path.join(current_script_dir, '../textsf/input.txt')
+file_output = os.path.join(current_script_dir, '../textsf/output.txt')
 
 
 @print_time_memory
@@ -18,10 +24,9 @@ def radix_sort(lst, phase):
 
 
 def task7():
-    fin = '../xtxt/input.txt'
-    n, m, k = read_array(fin, with_len=False)[0]
-    lst = read_str_lines(fin, start=1, num=n)
-    write_vars('../textsf/output.txt', radix_sort(lst, k))
+    n, m, k = read_array(file_input, with_len=False)[0]
+    lst = read_str_lines(file_input, start=1, num=n)
+    write_vars(file_output, radix_sort(lst, k))
 
 
 if __name__ == '__main__':
