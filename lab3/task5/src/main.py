@@ -1,4 +1,10 @@
 from lab3.utils import read_array, write_vars, print_time_memory
+import os
+
+
+current_script_dir = os.path.dirname(os.path.abspath(__file__))
+file_input = os.path.join(current_script_dir, '../textsf/input.txt')
+file_output = os.path.join(current_script_dir, '../textsf/output.txt')
 
 
 @print_time_memory
@@ -18,8 +24,8 @@ def h_index(citations):
 
 
 def task5():
-    arr = read_array('../textsf/input.txt', with_len=False)[0]
-    write_vars('../textsf/output.txt', h_index(arr))
+    arr = read_array(file_input, with_len=False)[0]
+    write_vars(file_output, h_index(arr))
 
 
 if __name__ == '__main__':
