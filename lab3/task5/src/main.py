@@ -17,10 +17,10 @@ def h_index(citations):
     return h
 
 
-def main():
+def task5():
     arr = read_array('../xtxt/input.txt', with_len=False)[0]
     write_vars('../xtxt/output.txt', h_index(arr))
 
 
 if __name__ == '__main__':
-    main()
+    task5()
