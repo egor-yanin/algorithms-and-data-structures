@@ -61,11 +61,11 @@ def randomized_quick_sort(lst, start, end, part3=False):
 
 
 @print_time_memory
-def main():
+def task1():
     a = read_array('../xtxt/input.txt')[0][0]
     randomized_quick_sort(a, 0, len(a) - 1)
     write_vars('../xtxt/output.txt', a)
 
 
 if __name__ == '__main__':
-    main()
+    task1()
