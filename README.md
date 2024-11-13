@@ -5,7 +5,7 @@
 1. [Лабараторная №0. Введение](https://github.com/egor-yanin/algorithms-and-data-structures/tree/main/lab0)
 2. [Лабараторная №1. Сортировка вставками, выбором, пузырковая](https://github.com/egor-yanin/algorithms-and-data-structures/tree/main/lab1)
 3. [Лабараторная № 2. Сортировка слиянием. Метод декомпозиции](https://github.com/egor-yanin/algorithms-and-data-structures/tree/main/lab2)
-4. Лабараторная №3. Быстрая сортировка, сортировка за линейное время
+4. [Лабараторная №3. Быстрая сортировка, сортировка за линейное время](https://github.com/egor-yanin/algorithms-and-data-structures/tree/lab3/lab3)
 
 ### Описание 
 
