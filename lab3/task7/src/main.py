@@ -17,7 +17,7 @@ def radix_sort(lst, phase):
     return pattern
 
 
-def main():
+def task7():
     fin = '../xtxt/input.txt'
     n, m, k = read_array(fin, with_len=False)[0]
     lst = read_str_lines(fin, start=1, num=n)
@@ -25,4 +25,4 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    task7()
