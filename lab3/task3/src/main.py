@@ -8,7 +8,7 @@ def pugalo_sort(lst, k):
             lst[i], lst[i + k] = lst[i + k], lst[i]
 
 
-def main():
+def task3():
     data = read_array('../xtxt/input.txt', num=2, with_len=False)
     n, k = data[0]
     a = data[1]
@@ -20,4 +20,4 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    task3()
