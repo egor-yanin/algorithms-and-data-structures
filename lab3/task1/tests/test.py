@@ -48,3 +48,9 @@ class TestCase(unittest.TestCase):
                 quick_sort(a, 0, len(a) - 1)
 
                 self.assertTrue(is_sorted(a))
+
+    @classmethod
+    def tearDownClass(cls):
+        file_sample = os.path.join(current_script_dir, '../txtf/sample.txt')
+        data_sample = read_array(file_sample)
+        write_vars(file_input, *data_sample[0][::-1])

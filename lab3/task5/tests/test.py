@@ -24,3 +24,9 @@ class TestCase(unittest.TestCase):
             result = read_int(file_output)
 
             self.assertEqual(result, expected_result)
+
+    @classmethod
+    def tearDownClass(cls):
+        file_sample = os.path.join(current_script_dir, '../txtf/sample.txt')
+        data_sample = read_str_lines(file_sample)
+        write_vars(file_input, data_sample[0])
