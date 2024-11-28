@@ -24,9 +24,12 @@ def read_array(file, start=0, num=1, with_len=True, integer=True) -> list:
     return res
 
 
-def read_str_lines(file, num=1, start=0):
+def read_str_lines(file, num=-1, start=0):
     with open(file) as f:
-        return [x.strip() for x in f.readlines()[start:start+num]]
+        if num == -1:
+            return [x.strip() for x in f.readlines()[start:]]
+        else:
+            return [x.strip() for x in f.readlines()[start:start+num]]
 
 
 def read_int(file, line=0) -> int:
