@@ -39,21 +39,13 @@ h из его/её Np статей цитируются как минимум h раз каждая, в то время как оставш
    ```
 2. Перейдите в папку с проектом:
    ```bash
-   cd repository-name/lab3/task5
+   cd algorithms-and-data-structures/lab3/task5
    ```
 3. Запустите программу:
    ```bash
    python src/main.py
    ```
-
 4. Запуск тестов:
    ```bash
-   python tests/test.py
+   pytest tests/test.py -v
    ```
-
-
-## Тестирование
-Для запуска тестов выполните:
-```bash
-    python -m unittest discover lab3/task5/tests
-```

@@ -31,21 +31,13 @@
    ```
 2. Перейдите в папку с проектом:
    ```bash
-   cd repository-name/lab3/task1
+   cd algorithms-and-data-structures/lab3/task1
    ```
 3. Запустите программу:
    ```bash
    python src/main.py
    ```
-
 4. Запуск тестов:
    ```bash
-   python tests/test.py
+   pytest tests/test.py -v
    ```
-
-
-## Тестирование
-Для запуска тестов выполните:
-```bash
-    python -m unittest discover lab3/task1/tests
-```
