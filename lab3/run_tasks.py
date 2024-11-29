@@ -1,8 +1,8 @@
-from task1.src.main import task1
-from task3.src.main import task3
-from task5.src.main import task5
-from task7.src.main import task7
-from utils import read_str_lines
+from lab3.task1.src.main import task1
+from lab3.task3.src.main import task3
+from lab3.task5.src.main import task5
+from lab3.task7.src.main import task7
+from lab3.utils import read_str_lines
 import os
 
 
