@@ -1,3 +1,7 @@
+import os
+from lab4.utils import read_str_lines, write_vars
+
+
 class Queue:
 
     def __init__(self, size=10**6):
@@ -33,4 +37,28 @@ class Queue:
         return x
 
 
+def run_commands(command_list: str):
+    tmp = Queue()
+    result = []
+    for command in command_list:
+        if command[0] == '+':
+            num = int(command.split()[1])
+            tmp.add(num)
+        elif command[0] == '-':
+            result.append(tmp.pop())
+    return result
 
+
+current_path = os.path.dirname(os.path.abspath(__file__))
+file_input = os.path.join(current_path, '../txtf/input.txt')
+file_output = os.path.join(current_path, '../txtf/output.txt')
+
+
+def task2():
+    lst = read_str_lines(file_input, start=1)
+    ans = run_commands(lst)
+    write_vars(file_output, *ans)
+
+
+if __name__ == '__main__':
+    task2()
