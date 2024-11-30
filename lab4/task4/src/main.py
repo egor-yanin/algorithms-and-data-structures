@@ -1,6 +1,12 @@
 from typing import Any
+import os
+from lab4.utils import read_lines, write_vars
+
 
 OPENED_CLOSED = {'{': '}', '[': ']', '(': ')'}
+current_dir = os.path.dirname(os.path.abspath(__file__))
+file_input = os.path.join(current_dir, '../txtf/input.txt')
+file_output = os.path.join(current_dir, '../txtf/output.txt')
 
 
 class Stack:
@@ -61,3 +67,7 @@ def find_errors(sub: list[tuple[int, str]]):
         return 'Success'
 
 
+def task4():
+    line = read_lines(file_input, num=1)[0]
+    res = find_errors(extract_brackets(line))
+    write_vars(file_output, res)
