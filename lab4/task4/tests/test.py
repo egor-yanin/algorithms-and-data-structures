@@ -1,6 +1,6 @@
 import unittest
 import os
-from lab4.task4.src.main import extract_brackets, find_errors
+from lab4.task4.src.main import extract_brackets, find_errors, task4
 from lab4.utils import read_lines, write_vars
 
 
@@ -8,6 +8,7 @@ current_dir = os.path.dirname(os.path.abspath(__file__))
 file_input = os.path.join(current_dir, '../txtf/input.txt')
 file_output = os.path.join(current_dir, '../txtf/output.txt')
 file_sample = os.path.join(current_dir, '../txtf/sample.txt')
+file_test = os.path.join(current_dir, '../txtf/test.txt')
 
 
 class TestCase(unittest.TestCase):
@@ -36,10 +37,19 @@ class TestCase(unittest.TestCase):
         self.assertEqual(res, expected_result)
 
     def test_task4(self):
-        pass
+        # given
+        s = read_lines(file_test)[0]
+        write_vars(file_input, s)
+        expected_result = '11'
+
+        # when
+        task4()
+        res = read_lines(file_output)[0]
+
+        # then
+        self.assertEqual(res, expected_result)
 
     @classmethod
     def tearDownClass(cls):
-        # given
         s = read_lines(file_sample)[0]
         write_vars(file_input, s)
