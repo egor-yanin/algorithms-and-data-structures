@@ -36,6 +36,12 @@ class Queue:
             self.is_empty = True
         return x
 
+    def seek_head(self):
+        return self.queue[self.head]
+
+    def seek_tail(self):
+        return self.queue[self.tail]
+
 
 def run_commands(command_list: list[str]):
     tmp = Queue()
