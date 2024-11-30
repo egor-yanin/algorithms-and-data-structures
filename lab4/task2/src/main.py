@@ -1,5 +1,5 @@
 import os
-from lab4.utils import read_str_lines, write_vars
+from lab4.utils import read_lines, write_vars
 
 
 class Queue:
@@ -37,7 +37,7 @@ class Queue:
         return x
 
 
-def run_commands(command_list: str):
+def run_commands(command_list: list[str]):
     tmp = Queue()
     result = []
     for command in command_list:
@@ -55,7 +55,7 @@ file_output = os.path.join(current_path, '../txtf/output.txt')
 
 
 def task2():
-    lst = read_str_lines(file_input, start=1)
+    lst = read_lines(file_input, start=1)
     ans = run_commands(lst)
     write_vars(file_output, *ans)
 
