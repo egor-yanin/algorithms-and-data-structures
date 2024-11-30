@@ -1,9 +1,9 @@
-def read_str_lines(file, num=-1, start=0):
+def read_lines(file, num=-1, start=0, data_type=str):
     with open(file) as f:
         if num == -1:
-            return [x.strip() for x in f.readlines()[start:]]
+            return [data_type(x.strip()) for x in f.readlines()[start:]]
         else:
-            return [x.strip() for x in f.readlines()[start:start+num]]
+            return [data_type(x.strip()) for x in f.readlines()[start:start+num]]
 
 
 def write_vars(file, *args, mode='w'):
