@@ -11,10 +11,10 @@ class Stack:
     def is_empty(self):
         return self.length == 0
 
-    def add(self, x):
+    def push(self, x):
         if self.length < len(self.stack):
             self.stack[self.length] = x
-            if x > self.max_stack[-1][0] or self.max_stack == []:
+            if self.max_stack == [] or x > self.max_stack[-1][0]:
                 self.max_stack.append((x, self.length))
             self.length += 1
         else:
@@ -24,7 +24,7 @@ class Stack:
         return self.stack[self.length - 1]
 
     def remove(self):
-        if self.length == self.max_stack[-1][1]:
+        if self.length - 1 == self.max_stack[-1][1]:
             self.max_stack.pop()
         self.length -= 1
 
@@ -38,4 +38,3 @@ class Stack:
 
     def seek_max(self):
         return self.max_stack[-1][0]
-        pass
