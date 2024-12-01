@@ -1,4 +1,11 @@
 from typing import Any
+from lab4.utils import read_lines, write_vars
+import os
+
+
+current_path = os.path.dirname(os.path.abspath(__file__))
+file_input = os.path.join(current_path, '../txtf/input.txt')
+file_output = os.path.join(current_path, '../txtf/output.txt')
 
 
 class Stack:
@@ -38,3 +45,28 @@ class Stack:
 
     def seek_max(self):
         return self.max_stack[-1][0]
+
+
+def execute(commands: list[str]):
+    st = Stack()
+    res = []
+    for com in commands:
+        if com[:4] == 'push':
+            st.push(int(com.split()[1]))
+        elif com[:3] == 'pop':
+            st.pop()
+        elif com[:3] == 'max':
+            res.append(st.seek_max())
+        else:
+            raise ValueError
+    return res
+
+
+def task5():
+    com_list = read_lines(file_input, start=1)
+    ans = execute(com_list)
+    write_vars(file_output, *ans)
+
+
+if __name__ == '__main__':
+    task5()
