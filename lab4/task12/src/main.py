@@ -1,3 +1,12 @@
+import os
+from lab4.utils import read_lines, write_vars
+
+
+current_path = os.path.dirname(os.path.abspath(__file__))
+file_input = os.path.join(current_path, '../txtf/input.txt')
+file_output = os.path.join(current_path, '../txtf/output.txt')
+
+
 class Recruit:
 
     def __init__(self, n=10**3):
@@ -50,3 +59,13 @@ def execute(commands: list[str]):
         else:
             raise ValueError
     return res
+
+
+def task12():
+    com_list = read_lines(file_input, start=1)
+    ans = execute(com_list)
+    write_vars(file_output, *ans)
+
+
+if __name__ == '__main__':
+    task12()
