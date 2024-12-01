@@ -28,3 +28,25 @@ class Recruit:
             left = self.formation[i_pos - 1]
             right = self.formation[i_pos + 1]
         return left, right
+
+
+def execute(commands: list[str]):
+    recruit = Recruit()
+    res = []
+    for com in commands:
+        words = com.split()
+        if words[0] == 'left':
+            i, j = map(int, words[1:])
+            recruit.stand_left(i, j)
+        elif words[0] == 'right':
+            i, j = map(int, words[1:])
+            recruit.stand_right(i, j)
+        elif words[0] == 'name':
+            i = int(words[1])
+            res.append(' '.join(str(x) for x in recruit.name(i)))
+        elif words[0] == 'leave':
+            i = int(words[1])
+            recruit.leave(i)
+        else:
+            raise ValueError
+    return res
