@@ -1,6 +1,13 @@
 import unittest
 import os
-from lab4.task12.src.main import Recruit, execute
+from lab4.utils import write_vars, read_lines
+from lab4.task12.src.main import Recruit, execute, task12
+
+
+current_path = os.path.dirname(os.path.abspath(__file__))
+file_input = os.path.join(current_path, '../txtf/input.txt')
+file_output = os.path.join(current_path, '../txtf/output.txt')
+file_sample = os.path.join(current_path, '../txtf/sample.txt')
 
 
 class TestCase(unittest.TestCase):
@@ -44,15 +51,29 @@ class TestCase(unittest.TestCase):
         self.assertEqual(res, expected_result)
 
     def test_should_execute(self):
+        # given
         command_list = ['left 2 1', 'right 3 1', 'name 1']
         expected_result = ['2 3']
 
+        # when
         res = execute(command_list)
 
+        # then
         self.assertEqual(res, expected_result)
         pass
 
     def test_task12(self):
+        # given
+        file_test = os.path.join(current_path, '../txtf/test.txt')
+        write_vars(file_input, *read_lines(file_test))
+        expected_result = ['0 3']
+
+        # when
+        task12()
+        res = read_lines(file_output)
+
+        # then
+        self.assertEqual(res, expected_result)
         pass
 
     @classmethod
