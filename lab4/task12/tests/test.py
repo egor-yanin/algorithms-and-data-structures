@@ -7,7 +7,6 @@ from lab4.task12.src.main import Recruit, execute, task12
 current_path = os.path.dirname(os.path.abspath(__file__))
 file_input = os.path.join(current_path, '../txtf/input.txt')
 file_output = os.path.join(current_path, '../txtf/output.txt')
-file_sample = os.path.join(current_path, '../txtf/sample.txt')
 
 
 class TestCase(unittest.TestCase):
@@ -78,4 +77,5 @@ class TestCase(unittest.TestCase):
 
     @classmethod
     def tearDownClass(cls):
-        pass
+        file_sample = os.path.join(current_path, '../txtf/sample.txt')
+        write_vars(file_input, *read_lines(file_sample))
