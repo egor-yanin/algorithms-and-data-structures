@@ -89,6 +89,14 @@ class DoublyLinkedList:
     def is_empty(self):
         return self.head is None
 
+    def get_list(self):
+        node = self.head
+        res = []
+        while node is not None:
+            res.append(node.data)
+            node = node.next
+        return res
+
     def print_list(self):
         node = self.head
         last = node
