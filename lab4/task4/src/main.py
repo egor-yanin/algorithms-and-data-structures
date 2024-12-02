@@ -17,7 +17,7 @@ def find_errors(sub: list[tuple[int, str]]):
     opened = Stack(len(sub))
     for num, symbol in sub:
         if symbol in '({[':
-            opened.add((num, symbol))
+            opened.push((num, symbol))
         else:
             if not opened.is_empty():
                 char = opened.seek_tail()[1]
