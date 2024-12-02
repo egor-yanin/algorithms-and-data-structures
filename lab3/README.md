@@ -1,34 +1,34 @@
-# Лабораторная работа №3: `Быстрая сортировка, сортировка за линейное время`
+# Р›Р°Р±РѕСЂР°С‚РѕСЂРЅР°СЏ СЂР°Р±РѕС‚Р° в„–3: `Р‘С‹СЃС‚СЂР°СЏ СЃРѕСЂС‚РёСЂРѕРІРєР°, СЃРѕСЂС‚РёСЂРѕРІРєР° Р·Р° Р»РёРЅРµР№РЅРѕРµ РІСЂРµРјСЏ`
 
-Студент ИТМО,  Янин Егор Вячеславович  468187
-## Вариант 24
-### Навигация
+РЎС‚СѓРґРµРЅС‚ РРўРњРћ,  РЇРЅРёРЅ Р•РіРѕСЂ Р’СЏС‡РµСЃР»Р°РІРѕРІРёС‡  468187
+## Р’Р°СЂРёР°РЅС‚ 24
+### РќР°РІРёРіР°С†РёСЏ
 
-- [ ] [Задача 1 - Улучшение Quick sort](https://github.com/egor-yanin/algorithms-and-data-structures/tree/main/lab3/task1)
-- [ ] [Задача 3 - Сортировка пугалом](https://github.com/egor-yanin/algorithms-and-data-structures/tree/main/lab3/task3)
-- [ ] [Задача 5 - Индекс Хирша](https://github.com/egor-yanin/algorithms-and-data-structures/tree/main/lab3/task5)
-- [ ] [Задача 7 - Цифровая сортировка](https://github.com/egor-yanin/algorithms-and-data-structures/tree/main/lab3/task7)
+- [ ] [Р—Р°РґР°С‡Р° 1 - РЈР»СѓС‡С€РµРЅРёРµ Quick sort](https://github.com/egor-yanin/algorithms-and-data-structures/tree/main/lab3/task1)
+- [ ] [Р—Р°РґР°С‡Р° 3 - РЎРѕСЂС‚РёСЂРѕРІРєР° РїСѓРіР°Р»РѕРј](https://github.com/egor-yanin/algorithms-and-data-structures/tree/main/lab3/task3)
+- [ ] [Р—Р°РґР°С‡Р° 5 - РРЅРґРµРєСЃ РҐРёСЂС€Р°](https://github.com/egor-yanin/algorithms-and-data-structures/tree/main/lab3/task5)
+- [ ] [Р—Р°РґР°С‡Р° 7 - Р¦РёС„СЂРѕРІР°СЏ СЃРѕСЂС‚РёСЂРѕРІРєР°](https://github.com/egor-yanin/algorithms-and-data-structures/tree/main/lab3/task7)
 
 
-## Описание
-Лабораторная работа посвящена разделу Разделяй и властвуй, быстрой сортировке, а также сортировам за линейное время.
+## РћРїРёСЃР°РЅРёРµ
+Р›Р°Р±РѕСЂР°С‚РѕСЂРЅР°СЏ СЂР°Р±РѕС‚Р° РїРѕСЃРІСЏС‰РµРЅР° СЂР°Р·РґРµР»Сѓ Р Р°Р·РґРµР»СЏР№ Рё РІР»Р°СЃС‚РІСѓР№, Р±С‹СЃС‚СЂРѕР№ СЃРѕСЂС‚РёСЂРѕРІРєРµ, Р° С‚Р°РєР¶Рµ СЃРѕСЂС‚РёСЂРѕРІР°Рј Р·Р° Р»РёРЅРµР№РЅРѕРµ РІСЂРµРјСЏ.
 
-## Запуск проекта
-1. **Клонируйте репозиторий**:
+## Р—Р°РїСѓСЃРє РїСЂРѕРµРєС‚Р°
+1. **РљР»РѕРЅРёСЂСѓР№С‚Рµ СЂРµРїРѕР·РёС‚РѕСЂРёР№**:
    ```bash
    git clone https://github.com/egor-yanin/algorithms-and-data-structures.git
    ```
-2. **Перейдите в папку с проектом**:
+2. **РџРµСЂРµР№РґРёС‚Рµ РІ РїР°РїРєСѓ СЃ РїСЂРѕРµРєС‚РѕРј**:
    ```bash
     $env:PYTHONPATH = (Get-Location).Path
     cd lab3
    ```
-3. **Запуск всех задач**
+3. **Р—Р°РїСѓСЃРє РІСЃРµС… Р·Р°РґР°С‡**
    ```bash
     python run_tasks.py
    ```
 
-4. **Запуск всех  тестов задач**
+4. **Р—Р°РїСѓСЃРє РІСЃРµС…  С‚РµСЃС‚РѕРІ Р·Р°РґР°С‡**
    ```bash
    python -m unittest discover -v
    ```

@@ -1,35 +1,35 @@
-# Лабораторная работа №4: `Стек, очередь, связанный список`
+# Р›Р°Р±РѕСЂР°С‚РѕСЂРЅР°СЏ СЂР°Р±РѕС‚Р° в„–4: `РЎС‚РµРє, РѕС‡РµСЂРµРґСЊ, СЃРІСЏР·Р°РЅРЅС‹Р№ СЃРїРёСЃРѕРє`
 
-Студент ИТМО,  Янин Егор Вячеславович  468187
-## Вариант 24
-### Навигация
+РЎС‚СѓРґРµРЅС‚ РРўРњРћ,  РЇРЅРёРЅ Р•РіРѕСЂ Р’СЏС‡РµСЃР»Р°РІРѕРІРёС‡  468187
+## Р’Р°СЂРёР°РЅС‚ 24
+### РќР°РІРёРіР°С†РёСЏ
 
-- [ ] [Задача 2 - Очередь](https://github.com/egor-yanin/algorithms-and-data-structures/tree/lab4/lab4/task2)
-- [ ] [Задача 4 - Скобочная последовательность. Версия 2](https://github.com/egor-yanin/algorithms-and-data-structures/tree/lab4/lab4/task4)
-- [ ] [Задача 5 - Стек с максимумом](https://github.com/egor-yanin/algorithms-and-data-structures/tree/lab4/lab4/task5)
-- [ ] [Задача 12 - Строй новобранцев](https://github.com/egor-yanin/algorithms-and-data-structures/tree/lab4/lab4/task12)
-- [ ] [Задача 13 - Реализация стека, очереди и связанных списков](https://github.com/egor-yanin/algorithms-and-data-structures/tree/lab4/lab4/task13)
+- [ ] [Р—Р°РґР°С‡Р° 2 - РћС‡РµСЂРµРґСЊ](https://github.com/egor-yanin/algorithms-and-data-structures/tree/lab4/lab4/task2)
+- [ ] [Р—Р°РґР°С‡Р° 4 - РЎРєРѕР±РѕС‡РЅР°СЏ РїРѕСЃР»РµРґРѕРІР°С‚РµР»СЊРЅРѕСЃС‚СЊ. Р’РµСЂСЃРёСЏ 2](https://github.com/egor-yanin/algorithms-and-data-structures/tree/lab4/lab4/task4)
+- [ ] [Р—Р°РґР°С‡Р° 5 - РЎС‚РµРє СЃ РјР°РєСЃРёРјСѓРјРѕРј](https://github.com/egor-yanin/algorithms-and-data-structures/tree/lab4/lab4/task5)
+- [ ] [Р—Р°РґР°С‡Р° 12 - РЎС‚СЂРѕР№ РЅРѕРІРѕР±СЂР°РЅС†РµРІ](https://github.com/egor-yanin/algorithms-and-data-structures/tree/lab4/lab4/task12)
+- [ ] [Р—Р°РґР°С‡Р° 13 - Р РµР°Р»РёР·Р°С†РёСЏ СЃС‚РµРєР°, РѕС‡РµСЂРµРґРё Рё СЃРІСЏР·Р°РЅРЅС‹С… СЃРїРёСЃРєРѕРІ](https://github.com/egor-yanin/algorithms-and-data-structures/tree/lab4/lab4/task13)
 
 
-## Описание
-Лабораторная работа посвящена разбору элементарных структур данных, таких как стек, очередь и связанный список.
+## РћРїРёСЃР°РЅРёРµ
+Р›Р°Р±РѕСЂР°С‚РѕСЂРЅР°СЏ СЂР°Р±РѕС‚Р° РїРѕСЃРІСЏС‰РµРЅР° СЂР°Р·Р±РѕСЂСѓ СЌР»РµРјРµРЅС‚Р°СЂРЅС‹С… СЃС‚СЂСѓРєС‚СѓСЂ РґР°РЅРЅС‹С…, С‚Р°РєРёС… РєР°Рє СЃС‚РµРє, РѕС‡РµСЂРµРґСЊ Рё СЃРІСЏР·Р°РЅРЅС‹Р№ СЃРїРёСЃРѕРє.
 
-## Запуск проекта
-1. **Клонируйте репозиторий**:
+## Р—Р°РїСѓСЃРє РїСЂРѕРµРєС‚Р°
+1. **РљР»РѕРЅРёСЂСѓР№С‚Рµ СЂРµРїРѕР·РёС‚РѕСЂРёР№**:
    ```bash
    git clone https://github.com/egor-yanin/algorithms-and-data-structures.git
    ```
-2. **Перейдите в папку с проектом**:
+2. **РџРµСЂРµР№РґРёС‚Рµ РІ РїР°РїРєСѓ СЃ РїСЂРѕРµРєС‚РѕРј**:
    ```bash
     $env:PYTHONPATH = (Get-Location).Path
     cd lab4
    ```
-3. **Запуск всех задач**
+3. **Р—Р°РїСѓСЃРє РІСЃРµС… Р·Р°РґР°С‡**
    ```bash
     python run_tasks.py
    ```
 
-4. **Запуск всех  тестов задач**
+4. **Р—Р°РїСѓСЃРє РІСЃРµС…  С‚РµСЃС‚РѕРІ Р·Р°РґР°С‡**
    ```bash
    python -m unittest discover -v
    ```
