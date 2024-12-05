@@ -14,35 +14,35 @@ class TestCase(unittest.TestCase):
 
     def test_should_push_pop(self):
         # given
-        tmp = Stack()
+        stack = Stack()
         expected_result = [3, 2]
-        res = []
+        result = []
 
         # when
-        tmp.push(1)
-        tmp.push(2)
-        tmp.push(3)
+        stack.push(1)
+        stack.push(2)
+        stack.push(3)
         for _ in range(2):
-            res.append(tmp.pop())
+            result.append(stack.pop())
 
         # then
-        self.assertEqual(res, expected_result)
+        self.assertEqual(result, expected_result)
 
     def test_should_seek_max(self):
         # given
-        tmp = Stack()
+        stack = Stack()
         expected_result = 5
 
         # when
-        tmp.push(5)
-        tmp.push(1)
-        tmp.push(-3)
-        tmp.push(41)
-        tmp.pop()
-        res = tmp.seek_max()
+        stack.push(5)
+        stack.push(1)
+        stack.push(-3)
+        stack.push(41)
+        stack.pop()
+        result = stack.seek_max()
 
         # then
-        self.assertEqual(res, expected_result)
+        self.assertEqual(result, expected_result)
 
     def test_task5(self):
         # given
@@ -52,9 +52,9 @@ class TestCase(unittest.TestCase):
 
         # when
         task5()
-        res = read_lines(file_output)
+        result = read_lines(file_output)
 
-        self.assertEqual(res, expected_result)
+        self.assertEqual(result, expected_result)
 
     @classmethod
     def tearDownClass(cls):

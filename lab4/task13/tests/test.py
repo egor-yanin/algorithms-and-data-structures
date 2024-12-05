@@ -6,73 +6,73 @@ class TestCase(unittest.TestCase):
 
     @staticmethod
     def create_doubly_linked_list(lst):
-        res = DoublyLinkedList()
+        linked_list = DoublyLinkedList()
         for n in lst:
-            res.push(n)
-        return res
+            linked_list.push(n)
+        return linked_list
 
     @staticmethod
     def create_stack(lst):
-        res = Stack()
+        stack = Stack()
         for n in lst:
-            res.push(n)
-        return res
+            stack.push(n)
+        return stack
 
     def test_should_push(self):
         # given
-        temp = self.create_doubly_linked_list([1, 2, 3])
+        linked_list = self.create_doubly_linked_list([1, 2, 3])
         expected_result = [3, 2, 1]
 
         # when
-        res = temp.get_list()
+        result = linked_list.get_list()
 
         # then
-        self.assertEqual(res, expected_result)
+        self.assertEqual(result, expected_result)
 
     def test_should_delete_node(self):
         # given
-        temp = self.create_doubly_linked_list([1, 2, 3])
+        linked_list = self.create_doubly_linked_list([1, 2, 3])
         expected_result = [3, 1]
 
         # when
-        temp.delete_node(temp.get_node(2))
+        linked_list.delete_node(linked_list.get_node(2))
 
-        res = temp.get_list()
+        result = linked_list.get_list()
 
         # then
-        self.assertEqual(res, expected_result)
+        self.assertEqual(result, expected_result)
 
     def test_should_insert_after(self):
         # given
-        temp = self.create_doubly_linked_list([1, 2, 3])
+        linked_list = self.create_doubly_linked_list([1, 2, 3])
         expected_result = [3, 2, 4, 1]
 
         # when
-        temp.insert_after(temp.get_node(2), 4)
-        res = temp.get_list()
+        linked_list.insert_after(linked_list.get_node(2), 4)
+        result = linked_list.get_list()
 
         # then
-        self.assertEqual(res, expected_result)
+        self.assertEqual(result, expected_result)
 
     def test_should_insert_before(self):
         # given
-        temp = self.create_doubly_linked_list([1, 2, 3])
+        linked_list = self.create_doubly_linked_list([1, 2, 3])
         expected_result = [3, 4, 2, 1]
 
         # when
-        temp.insert_before(temp.get_node(2), 4)
-        res = temp.get_list()
+        linked_list.insert_before(linked_list.get_node(2), 4)
+        result = linked_list.get_list()
 
         # then
-        self.assertEqual(res, expected_result)
+        self.assertEqual(result, expected_result)
 
     def test_should_pop(self):
         # given
-        temp = self.create_stack([1, 2, 3])
+        stack = self.create_stack([1, 2, 3])
         expected_result = 3
 
         # when
-        res = temp.pop()
+        result = stack.pop()
 
         # then
-        self.assertEqual(res, expected_result)
+        self.assertEqual(result, expected_result)

@@ -13,41 +13,41 @@ class TestCase(unittest.TestCase):
 
     def test_should_stand(self):
         # given
-        tmp = Recruit()
+        recruit = Recruit()
         expected_result = [2, 1, 3]
 
         # when
-        tmp.stand_left(2, 1)
-        tmp.stand_right(3, 1)
+        recruit.stand_left(2, 1)
+        recruit.stand_right(3, 1)
 
         # then
-        self.assertEqual(tmp.formation, expected_result)
+        self.assertEqual(recruit.formation, expected_result)
 
     def test_should_leave(self):
         # given
-        tmp = Recruit()
-        tmp.stand_right(2, 1)
-        tmp.stand_right(3, 2)
+        recruit = Recruit()
+        recruit.stand_right(2, 1)
+        recruit.stand_right(3, 2)
         expected_result = [1, 3]
 
         # when
-        tmp.leave(2)
+        recruit.leave(2)
 
         # then
-        self.assertEqual(tmp.formation, expected_result)
+        self.assertEqual(recruit.formation, expected_result)
 
     def test_should_name(self):
         # given
-        tmp = Recruit()
-        tmp.stand_right(2, 1)
-        tmp.stand_right(3, 2)
+        recruit = Recruit()
+        recruit.stand_right(2, 1)
+        recruit.stand_right(3, 2)
         expected_result = (1, 3)
 
         # when
-        res = tmp.name(2)
+        result = recruit.name(2)
 
         # then
-        self.assertEqual(res, expected_result)
+        self.assertEqual(result, expected_result)
 
     def test_should_execute(self):
         # given
@@ -55,10 +55,10 @@ class TestCase(unittest.TestCase):
         expected_result = ['2 3']
 
         # when
-        res = execute(command_list)
+        result = execute(command_list)
 
         # then
-        self.assertEqual(res, expected_result)
+        self.assertEqual(result, expected_result)
         pass
 
     def test_task12(self):
@@ -69,10 +69,10 @@ class TestCase(unittest.TestCase):
 
         # when
         task12()
-        res = read_lines(file_output)
+        result = read_lines(file_output)
 
         # then
-        self.assertEqual(res, expected_result)
+        self.assertEqual(result, expected_result)
         pass
 
     @classmethod

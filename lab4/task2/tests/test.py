@@ -11,49 +11,49 @@ file_sample = os.path.join(current_path, '../txtf/sample.txt')
 file_test = os.path.join(current_path, '../txtf/test.txt')
 
 
-class TestCase(unittest.TestCase):
+class Task2TestCase(unittest.TestCase):
 
     def test_should_queue(self):
         # given
-        q = Queue()
+        queue = Queue()
         expected_result = [1, 2, 3, 4]
-        res = []
+        result = []
 
         # when
-        q.add(1)
-        q.add(2)
-        res.append(q.pop())
-        q.add(3)
-        q.add(4)
+        queue.add(1)
+        queue.add(2)
+        result.append(queue.pop())
+        queue.add(3)
+        queue.add(4)
         for _ in range(3):
-            res.append(q.pop())
+            result.append(queue.pop())
 
         # then
-        self.assertEqual(res, expected_result)
+        self.assertEqual(result, expected_result)
 
     def test_should_run_commands(self):
         # given
-        coms = read_lines(file_test, start=1)
+        commands = read_lines(file_test, start=1)
         expected_result = [1, 2, 3, 4]
 
         # when
-        res = run_commands(coms)
+        result = run_commands(commands)
 
         # then
-        self.assertEqual(res, expected_result)
+        self.assertEqual(result, expected_result)
 
     def test_task2(self):
         # given
-        coms = read_lines(file_test)
+        commands = read_lines(file_test)
         expected_result = [1, 2, 3, 4]
 
         # when
-        write_vars(file_input, *coms)
+        write_vars(file_input, *commands)
         task2()
-        res = read_lines(file_output, data_type=int)
+        result = read_lines(file_output, data_type=int)
 
         # then
-        self.assertEqual(res, expected_result)
+        self.assertEqual(result, expected_result)
 
     @classmethod
     def tearDown(cls):

@@ -11,7 +11,7 @@ file_sample = os.path.join(current_dir, '../txtf/sample.txt')
 file_test = os.path.join(current_dir, '../txtf/test.txt')
 
 
-class TestCase(unittest.TestCase):
+class Task4TestCase(unittest.TestCase):
 
     def test_should_extract_brackets(self):
         # given
@@ -19,10 +19,10 @@ class TestCase(unittest.TestCase):
         expected_result = [(3, '('), (7, ')'), (8, '['), (9, ']'), (10, '{'), (13, '{'), (14, '}')]
 
         # when
-        res = extract_brackets(s)
+        result = extract_brackets(s)
 
         # then
-        self.assertEqual(res, expected_result)
+        self.assertEqual(result, expected_result)
 
     def test_should_find_errors(self):
         # given
@@ -31,10 +31,10 @@ class TestCase(unittest.TestCase):
         expected_result = ['11', 'Success']
 
         # when
-        res = [find_errors(s_1), find_errors(s_2)]
+        result = [find_errors(s_1), find_errors(s_2)]
 
         # then
-        self.assertEqual(res, expected_result)
+        self.assertEqual(result, expected_result)
 
     def test_task4(self):
         # given
@@ -44,10 +44,10 @@ class TestCase(unittest.TestCase):
 
         # when
         task4()
-        res = read_lines(file_output)[0]
+        result = read_lines(file_output)[0]
 
         # then
-        self.assertEqual(res, expected_result)
+        self.assertEqual(result, expected_result)
 
     @classmethod
     def tearDownClass(cls):
