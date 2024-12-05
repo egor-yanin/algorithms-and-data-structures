@@ -9,45 +9,87 @@ file_input = os.path.join(current_script_dir, '../txtf/input.txt')
 file_output = os.path.join(current_script_dir, '../txtf/output.txt')
 
 
-class TestCase(unittest.TestCase):
+class Lab3Task1TestCase(unittest.TestCase):
 
     def test_should_partition3(self):
+        # given
         expected_partition = [3, 5]
         expected_result = [1, 2, 1, 3, 3, 3, 5, 4]
         file = os.path.join(current_script_dir, '../txtf/partition3test.txt')
 
+        # when
         a1 = read_array(file)[0][0]
         m1, m2 = partition3(a1, 0, len(a1) - 1)
 
+        # then
         self.assertEqual([m1, m2], expected_partition)
         self.assertEqual(a1, expected_result)
 
-    def test_should_randomized_quick_sort(self):
-        files = ['worst_case.txt', 'average_case.txt', 'best_case.txt']
-        paths = [os.path.join(current_script_dir, f'../txtf/{f}') for f in files]
+    def test_should_randomized_quick_sort_worst_case(self):
+        # given
+        path = os.path.join(current_script_dir, '../txtf/worst_case.txt')
+        lst = read_array(path, with_len=True)[0][0]
 
-        for f in paths:
-            for a, n in read_array(f, num=2, with_len=True):
-                write_vars(file_input, n, a)
-                print('Файл', f)
-                print('Массив размера', n)
-                task1()
-                a = read_array(file_output, with_len=False)
+        # when
+        randomized_quick_sort(lst)
 
-                self.assertTrue(is_sorted(a))
+        # then
+        self.assertTrue(is_sorted(lst))
 
-    def test_should_quick_sort(self):
-        files = ['worst_case.txt', 'average_case.txt', 'best_case.txt']
-        paths = [os.path.join(current_script_dir, f'../txtf/{f}') for f in files]
+    def test_should_randomized_quick_sort_average_case(self):
+        # given
+        path = os.path.join(current_script_dir, '../txtf/average_case.txt')
+        lst = read_array(path, with_len=True)[0][0]
 
-        for f in paths:
-            for a, n in read_array(f, num=2, with_len=True):
-                print()
-                print('Файл', f)
-                print('Массив размера', n)
-                quick_sort(a, 0, len(a) - 1)
+        # when
+        randomized_quick_sort(lst)
 
-                self.assertTrue(is_sorted(a))
+        # then
+        self.assertTrue(is_sorted(lst))
+
+    def test_should_randomized_quick_sort_best_case(self):
+        # given
+        path = os.path.join(current_script_dir, '../txtf/best_case.txt')
+        lst = read_array(path, with_len=True)[0][0]
+
+        # when
+        randomized_quick_sort(lst)
+
+        # then
+        self.assertTrue(is_sorted(lst))
+
+    def test_should_quick_sort_worst_case(self):
+        # given
+        path = os.path.join(current_script_dir, '../txtf/worst_case.txt')
+        lst = read_array(path, with_len=True)[0][0]
+
+        # when
+        quick_sort(lst)
+
+        # then
+        self.assertTrue(is_sorted(lst))
+
+    def test_should_quick_sort_average_case(self):
+        # given
+        path = os.path.join(current_script_dir, '../txtf/average_case.txt')
+        lst = read_array(path, with_len=True)[0][0]
+
+        # when
+        quick_sort(lst)
+
+        # then
+        self.assertTrue(is_sorted(lst))
+
+    def test_should_quick_sort_best_case(self):
+        # given
+        path = os.path.join(current_script_dir, '../txtf/best_case.txt')
+        lst = read_array(path, with_len=True)[0][0]
+
+        # when
+        quick_sort(lst)
+
+        # then
+        self.assertTrue(is_sorted(lst))
 
     @classmethod
     def tearDownClass(cls):
