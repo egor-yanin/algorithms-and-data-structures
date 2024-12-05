@@ -11,7 +11,7 @@ file_sample = os.path.join(current_dir, '../txtf/sample.txt')
 file_test = os.path.join(current_dir, '../txtf/test.txt')
 
 
-class Task4TestCase(unittest.TestCase):
+class Lab4Task4TestCase(unittest.TestCase):
 
     def test_should_extract_brackets(self):
         # given

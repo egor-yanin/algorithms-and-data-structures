@@ -2,7 +2,7 @@ import unittest
 from lab4.task13.src.main import DoublyLinkedList, Stack
 
 
-class TestCase(unittest.TestCase):
+class Lab4Task13TestCase(unittest.TestCase):
 
     @staticmethod
     def create_doubly_linked_list(lst):

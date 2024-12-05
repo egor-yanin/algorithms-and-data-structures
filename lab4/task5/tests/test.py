@@ -10,7 +10,7 @@ file_output = os.path.join(current_path, '../txtf/output.txt')
 file_sample = os.path.join(current_path, '../txtf/sample.txt')
 
 
-class TestCase(unittest.TestCase):
+class Lab4Task5TestCase(unittest.TestCase):
 
     def test_should_push_pop(self):
         # given

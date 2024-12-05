@@ -11,7 +11,7 @@ file_sample = os.path.join(current_path, '../txtf/sample.txt')
 file_test = os.path.join(current_path, '../txtf/test.txt')
 
 
-class Task2TestCase(unittest.TestCase):
+class Lab4Task2TestCase(unittest.TestCase):
 
     def test_should_queue(self):
         # given

@@ -9,7 +9,7 @@ file_input = os.path.join(current_path, '../txtf/input.txt')
 file_output = os.path.join(current_path, '../txtf/output.txt')
 
 
-class TestCase(unittest.TestCase):
+class Lab4Task12TestCase(unittest.TestCase):
 
     def test_should_stand(self):
         # given
