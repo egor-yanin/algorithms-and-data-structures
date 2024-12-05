@@ -37,7 +37,9 @@ def partition3(lst, start, end):
     return i + 1, p + 1
 
 
-def quick_sort(lst, start, end):
+def quick_sort(lst, start=0, end=-1):
+    if end == -1:
+        end = len(lst) - 1
     if start < end:
         q = partition(lst, start, end)
         quick_sort(lst, start, q - 1)
@@ -53,7 +55,9 @@ def randomized_partition(lst, start, end, part3=False):
         return partition(lst, start, end)
 
 
-def randomized_quick_sort(lst, start, end, part3=False):
+def randomized_quick_sort(lst, start=0, end=-1, part3=False):
+    if end == -1:
+        end = len(lst) - 1
     if start < end:
         if part3:
             q, p = randomized_partition(lst, start, end, part3=True)
