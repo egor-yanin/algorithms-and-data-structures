@@ -1,5 +1,5 @@
 import os
-from lab4.utils import read_lines, write_vars
+from lab4.utils import read_lines, write_vars, print_time_memory
 from lab4.task5.src.main import Stack
 
 
@@ -36,6 +36,7 @@ def find_errors(sub: list[tuple[int, str]]):
         return 'Success'
 
 
+@print_time_memory
 def task4():
     line = read_lines(file_input, num=1)[0]
     res = find_errors(extract_brackets(line))

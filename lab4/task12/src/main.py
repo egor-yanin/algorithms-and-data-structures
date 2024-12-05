@@ -1,5 +1,5 @@
 import os
-from lab4.utils import read_lines, write_vars
+from lab4.utils import read_lines, write_vars, print_time_memory
 
 
 current_path = os.path.dirname(os.path.abspath(__file__))
@@ -61,6 +61,7 @@ def execute(commands: list[str]):
     return res
 
 
+@print_time_memory
 def task12():
     com_list = read_lines(file_input, start=1)
     ans = execute(com_list)

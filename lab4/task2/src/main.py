@@ -1,5 +1,5 @@
 import os
-from lab4.utils import read_lines, write_vars
+from lab4.utils import read_lines, write_vars, print_time_memory
 
 
 class Queue:
@@ -60,6 +60,7 @@ file_input = os.path.join(current_path, '../txtf/input.txt')
 file_output = os.path.join(current_path, '../txtf/output.txt')
 
 
+@print_time_memory
 def task2():
     lst = read_lines(file_input, start=1)
     ans = run_commands(lst)
