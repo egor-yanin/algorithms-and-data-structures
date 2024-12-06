@@ -87,3 +87,19 @@ class LowerPriorityQueue(LowerHeap):
         self.heap_list.append(10**9)
         self.decrease_key(self.heap_size, x)
 
+
+def execute(commands: list[str]) -> list:
+    queue = LowerPriorityQueue()
+    result = []
+    for command in commands:
+        if command.split()[0] == 'A':
+            x = int(command.split()[1])
+            queue.insert(x)
+        elif command.split()[0] == 'X':
+            result.append(queue.extract_min())
+        elif command.split()[0] == 'D':
+            x, y = map(int, command.split()[1:])
+            element = x
+            queue.decrease_key(element, y)
+    return result
+
