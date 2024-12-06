@@ -58,7 +58,7 @@ class LowerPriorityQueue(LowerHeap):
 
     def extract_min(self):
         if self.heap_minimum() is None:
-            raise IndexError
+            return '*'
         maximum = self.heap_minimum()
         self.heap_list[0] = self.heap_list[self.heap_size]
         self.heap_size -= 1
@@ -103,3 +103,8 @@ def execute(commands: list[str]) -> list:
             queue.decrease_key(element, y)
     return result
 
+
+def task6():
+    command_list = read_lines(file_input, start=1)
+    ans = execute(command_list)
+    write_vars(file_output, *ans)
