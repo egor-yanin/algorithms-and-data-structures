@@ -57,7 +57,7 @@ class LowerPriorityQueue(LowerHeap):
         return self.heap_list[1]
 
     def extract_min(self):
-        if self.heap_minimum() is None:
+        if self.heap_size == 0:
             return '*'
         maximum = self.heap_minimum()
         self.heap_list[0] = self.heap_list[self.heap_size]
@@ -90,17 +90,21 @@ class LowerPriorityQueue(LowerHeap):
 
 def execute(commands: list[str]) -> list:
     queue = LowerPriorityQueue()
+    addition_list = [0] * len(commands)
     result = []
-    for command in commands:
+    for i in range(len(commands)):
+        command = commands[i]
         if command.split()[0] == 'A':
             x = int(command.split()[1])
             queue.insert(x)
+            addition_list[i] = x
         elif command.split()[0] == 'X':
             result.append(queue.extract_min())
         elif command.split()[0] == 'D':
             x, y = map(int, command.split()[1:])
-            element = x
+            element = queue.get_index(addition_list[x])
             queue.decrease_key(element, y)
+            addition_list[x] = y
     return result
 
 
@@ -108,3 +112,7 @@ def task6():
     command_list = read_lines(file_input, start=1)
     ans = execute(command_list)
     write_vars(file_output, *ans)
+
+
+if __name__ == '__main__':
+    task6()
