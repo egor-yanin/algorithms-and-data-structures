@@ -34,3 +34,9 @@ def print_time_memory(task_func):
 
         return result
     return wrapper
+
+
+def is_sorted(lst, reverse=False):
+    if reverse:
+        return all(lst[i] >= lst[i + 1] for i in range(len(lst) - 1))
+    return all(lst[i] <= lst[i + 1] for i in range(len(lst) - 1))
