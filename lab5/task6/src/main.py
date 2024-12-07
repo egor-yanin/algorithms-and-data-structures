@@ -60,12 +60,12 @@ class LowerPriorityQueue(LowerHeap):
         if self.heap_size == 0:
             return '*'
         maximum = self.heap_minimum()
-        self.heap_list[0] = self.heap_list[self.heap_size]
+        self.heap_list[1] = self.heap_list[self.heap_size]
         self.heap_size -= 1
         if self.heap_size < 1:
             self.heap_list[0] = None
             return maximum
-        self.max_heapify(0)
+        self.max_heapify(1)
         return maximum
 
     def get_index(self, x):
@@ -102,9 +102,9 @@ def execute(commands: list[str]) -> list:
             result.append(queue.extract_min())
         elif command.split()[0] == 'D':
             x, y = map(int, command.split()[1:])
-            element = queue.get_index(addition_list[x])
+            element = queue.get_index(addition_list[x - 1])
             queue.decrease_key(element, y)
-            addition_list[x] = y
+            addition_list[x - 1] = y
     return result
 
 
