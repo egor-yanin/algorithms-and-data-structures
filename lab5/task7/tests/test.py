@@ -1,7 +1,12 @@
 from lab5.task7.src.main import heap_sort
-from lab5.utils import is_sorted
+from lab5.utils import is_sorted, read_lines, write_vars
 import unittest
 import random
+import os
+
+
+current_dir = os.path.dirname(os.path.abspath(__file__))
+file_input = os.path.join(current_dir, '../txtf/input.txt')
 
 
 class Lab5Task7TestCase(unittest.TestCase):
@@ -34,3 +39,8 @@ class Lab5Task7TestCase(unittest.TestCase):
 
         # then
         self.assertTrue(is_sorted(result, reverse=True))
+
+    @classmethod
+    def tearDownClass(cls):
+        file_sample = os.path.join(current_dir, '../txtf/sample.txt')
+        write_vars(file_input, *read_lines(file_sample))
