@@ -8,6 +8,7 @@ file_input = os.path.join(current_dir, '../txtf/input.txt')
 file_output = os.path.join(current_dir, '../txtf/output.txt')
 
 
+@print_time_memory
 def heap_sort(lst):
     heap = LowerHeap(lst)
     for i in range(len(lst), 1, -1):
