@@ -30,6 +30,7 @@ def is_heap(lst):
     return flag
 
 
+@print_time_memory
 def task1():
     lst = read_lines(file_input, start=1, data_type=int)
     if is_heap(lst):
