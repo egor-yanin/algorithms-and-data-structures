@@ -1,5 +1,5 @@
 import os
-from lab5.utils import read_lines, write_vars, print_time_memory
+from lab5.utils import read_array, write_vars, print_time_memory
 
 
 current_dir = os.path.dirname(os.path.abspath(__file__))
@@ -32,7 +32,7 @@ def is_heap(lst):
 
 @print_time_memory
 def task1():
-    lst = read_lines(file_input, start=1, data_type=int)
+    lst = read_array(file_input, line=1)
     if is_heap(lst):
         write_vars(file_output, 'YES')
     else:
