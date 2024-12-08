@@ -1,52 +1,11 @@
 import os
-from lab5.utils import print_time_memory, read_lines, write_vars
+from lab5.utils import read_lines, write_vars
+from lab5.task4.src.main import LowerHeap
 
 
 current_dir = os.path.dirname(os.path.abspath(__file__))
 file_input = os.path.join(current_dir, '../txtf/input.txt')
 file_output = os.path.join(current_dir, '../txtf/output.txt')
-
-
-class LowerHeap:
-    def __init__(self, lst: list[int]):
-        self.heap_list = [None] + lst.copy()
-        self.heap_size = len(lst)
-        for i in range(self.heap_size // 2, 0, -1):
-            self.max_heapify(i)
-
-    def get_node_data(self, i: int):
-        return self.heap_list[i]
-
-    def get_list(self):
-        return self.heap_list[1:]
-
-    @staticmethod
-    def get_left(i: int):
-        return 2 * i
-
-    @staticmethod
-    def get_right(i: int):
-        return 2 * i + 1
-
-    @staticmethod
-    def get_parent(i: int):
-        return i // 2
-
-    def swap(self, i, j):
-        self.heap_list[i], self.heap_list[j] = self.heap_list[j], self.heap_list[i]
-
-    def max_heapify(self, i: int):
-        left = self.get_left(i)
-        right = self.get_right(i)
-        if left <= self.heap_size and self.get_node_data(left) < self.get_node_data(i):
-            smallest = left
-        else:
-            smallest = i
-        if right <= self.heap_size and self.get_node_data(right) < self.get_node_data(smallest):
-            smallest = right
-        if smallest != i:
-            self.swap(i, smallest)
-            self.max_heapify(smallest)
 
 
 class LowerPriorityQueue(LowerHeap):
