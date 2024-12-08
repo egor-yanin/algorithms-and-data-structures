@@ -4,6 +4,8 @@
 ## Вариант 24
 ### Навигация
 
+- [ ] [Задача 1 - Куча ли?](https://github.com/egor-yanin/algorithms-and-data-structures/tree/lab5/lab5/task1)
+- [ ] [Задача 4 - Построение пирамиды](https://github.com/egor-yanin/algorithms-and-data-structures/tree/lab5/lab5/task4)
 - [ ] [Задача 6 - Очередь с приоритетами](https://github.com/egor-yanin/algorithms-and-data-structures/tree/lab5/lab5/task6)
 - [ ] [Задача 7 - Снова сортировка](https://github.com/egor-yanin/algorithms-and-data-structures/tree/lab5/lab5/task7)
 
