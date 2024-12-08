@@ -10,6 +10,12 @@ def read_lines(file, num=-1, start=0, data_type=str):
             return [data_type(x.strip()) for x in f.readlines()[start:start+num]]
 
 
+def read_array(file, line=0, data_type=int):
+    with open(file) as f:
+        s = f.readlines()[line].strip()
+        return [data_type(x) for x in s.split()]
+
+
 def write_vars(file, *args, mode='w'):
     with open(file, mode) as fout:
         for i in args:
