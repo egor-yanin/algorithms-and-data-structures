@@ -1,5 +1,11 @@
 import unittest
+import os
+from lab5.utils import read_lines, write_vars
 from lab5.task1.src.main import is_correct_node, is_heap
+
+
+current_dir = os.path.dirname(os.path.abspath(__file__))
+file_input = os.path.join(current_dir, '../txtf/input.txt')
 
 
 class Lab5Task1TestCase(unittest.TestCase):
@@ -26,3 +32,8 @@ class Lab5Task1TestCase(unittest.TestCase):
 
         # then
         self.assertEqual(result, expected_result)
+
+    @classmethod
+    def tearDownClass(cls):
+        file_sample = os.path.join(current_dir, '../txtf/sample.txt')
+        write_vars(file_input, *read_lines(file_sample))
