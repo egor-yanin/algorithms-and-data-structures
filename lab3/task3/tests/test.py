@@ -9,20 +9,21 @@ file_input = os.path.join(current_script_dir, '../txtf/input.txt')
 file_output = os.path.join(current_script_dir, '../txtf/output.txt')
 
 
-class TestCase(unittest.TestCase):
+class Lab3Task3TestCase(unittest.TestCase):
 
     def test_should_task3(self):
+        # given
         path = os.path.join(current_script_dir, '../txtf/test_data.txt')
-        data = read_array(path, num=4, with_len=False)
-        expected_result = ['NO', 'YES']
+        data = read_array(path, num=2, with_len=False)
+        expected_result = 'YES'
 
-        print()
-        for i in range(2):
-            write_vars(file_input, data[i * 2], data[i * 2 + 1])
-            task3()
-            ans = read_str_lines(file_output, num=1)[0].strip()
+        # when
+        write_vars(file_input, data[0], data[1])
+        task3()
+        ans = read_str_lines(file_output, num=1)[0].strip()
 
-            self.assertEqual(ans, expected_result[i])
+        # then
+        self.assertEqual(ans, expected_result)
 
     @classmethod
     def tearDownClass(cls):

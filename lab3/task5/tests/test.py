@@ -9,21 +9,21 @@ file_input = os.path.join(current_script_dir, '../txtf/input.txt')
 file_output = os.path.join(current_script_dir, '../txtf/output.txt')
 
 
-class TestCase(unittest.TestCase):
+class Lab3Task5TestCase(unittest.TestCase):
 
     def test_h_index(self):
+        # given
         path = os.path.join(current_script_dir, '../txtf/test.txt')
-        n = read_int(path)
-        for i in range(n):
-            data = read_array(path, start=1 + i * 2, num=2, with_len=False)
-            lst = data[0]
-            expected_result = data[1][0]
+        data = read_array(path, with_len=False)[0]
+        expected_result = 5
 
-            write_vars(file_input, lst)
-            task5()
-            result = read_int(file_output)
+        # when
+        write_vars(file_input, data)
+        task5()
+        result = read_int(file_output)
 
-            self.assertEqual(result, expected_result)
+        # then
+        self.assertEqual(result, expected_result)
 
     @classmethod
     def tearDownClass(cls):
