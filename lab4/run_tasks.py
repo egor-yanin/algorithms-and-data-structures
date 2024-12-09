@@ -1,3 +1,4 @@
+from lab4.task1.src.main import task1
 from lab4.task2.src.main import task2
 from lab4.task4.src.main import task4
 from lab4.task5.src.main import task5
@@ -6,7 +7,7 @@ from lab3.utils import read_str_lines
 import os
 
 
-TASKS = {2: task2, 4: task4, 5: task5, 12: task12}
+TASKS = {2: task2, 1: task1, 5: task5, 12: task12}
 current_path = os.path.dirname(os.path.abspath(__file__))
 
 
