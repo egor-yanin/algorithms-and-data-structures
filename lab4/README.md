@@ -4,12 +4,12 @@
 ## Вариант 24
 ### Навигация
 
-- [ ] [Задача 1 - Стек](https://github.com/egor-yanin/algorithms-and-data-structures/tree/lab4/lab4/task1)
-- [ ] [Задача 2 - Очередь](https://github.com/egor-yanin/algorithms-and-data-structures/tree/lab4/lab4/task2)
-- [ ] [Задача 4 - Скобочная последовательность. Версия 2](https://github.com/egor-yanin/algorithms-and-data-structures/tree/lab4/lab4/task4)
-- [ ] [Задача 5 - Стек с максимумом](https://github.com/egor-yanin/algorithms-and-data-structures/tree/lab4/lab4/task5)
-- [ ] [Задача 12 - Строй новобранцев](https://github.com/egor-yanin/algorithms-and-data-structures/tree/lab4/lab4/task12)
-- [ ] [Задача 13 - Реализация стека, очереди и связанных списков](https://github.com/egor-yanin/algorithms-and-data-structures/tree/lab4/lab4/task13)
+- [ ] [Задача 1 - Стек](https://github.com/egor-yanin/algorithms-and-data-structures/tree/main/lab4/task1)
+- [ ] [Задача 2 - Очередь](https://github.com/egor-yanin/algorithms-and-data-structures/tree/main/lab4/task2)
+- [ ] [Задача 4 - Скобочная последовательность. Версия 2](https://github.com/egor-yanin/algorithms-and-data-structures/tree/main/lab4/task4)
+- [ ] [Задача 5 - Стек с максимумом](https://github.com/egor-yanin/algorithms-and-data-structures/tree/main/lab4/task5)
+- [ ] [Задача 12 - Строй новобранцев](https://github.com/egor-yanin/algorithms-and-data-structures/tree/main/lab4/task12)
+- [ ] [Задача 13 - Реализация стека, очереди и связанных списков](https://github.com/egor-yanin/algorithms-and-data-structures/tree/main/lab4/task13)
 
 
 ## Описание
