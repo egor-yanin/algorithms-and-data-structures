@@ -1,51 +1,50 @@
 import unittest
-from lab2.task1.src.main import main
-import psutil
-import time
-from random import randint
+from lab2.task1.src.main import merge_sort
+from lab2.utils import read_array, is_sorted, write_vars
+import os
 
 
-class TestCaseTask1(unittest.TestCase):
+CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
+FILE_INPUT = os.path.join(CURRENT_DIR, '../txtf/input.txt')
+FILE_OUTPUT = os.path.join(CURRENT_DIR, '../txtf/output.txt')
+FILE_SAMPLE = os.path.join(CURRENT_DIR, '../txtf/sample.txt')
+FILE_RAND = os.path.join(CURRENT_DIR, '../txtf/rand.txt')
+FILE_REVERSE = os.path.join(CURRENT_DIR, '../txtf/rev.txt')
+FILE_SORTED = os.path.join(CURRENT_DIR, '../txtf/sort.txt')
 
-    def test_sample(self):
-        start = time.perf_counter()
-        main('input.txt')
-        print(f'\nЗатрачено времени: {round(time.perf_counter() - start, 6)} c.')
-        print(f"Память: {psutil.Process().memory_info().rss / 1024 ** 2:.2f} МБ")
-        with open('input.txt') as f:
-            lst = [int(x) for x in f.readlines()[1].split()]
-        with open('output.txt') as f:
-            self.assertEqual(f.readline().strip(), ' '.join([str(x) for x in sorted(lst)]))
 
-    def test_reversed(self):
-        start = time.perf_counter()
-        main('rev.txt')
-        print(f'\nЗатрачено времени: {round(time.perf_counter() - start, 6)} c.')
-        print(f"Память: {psutil.Process().memory_info().rss / 1024 ** 2:.2f} МБ")
-        with open('rev.txt') as f:
-            f.seek(1)
-            lst = [int(x) for x in f.readlines()[1].split()]
-        with open('output.txt') as f:
-            self.assertEqual(f.readline().strip(), ' '.join([str(x) for x in sorted(lst)]))
+class Lab2Task1TestCase(unittest.TestCase):
+    def test_should_merge_sort_reversed_file(self):
+        # given
+        lst = read_array(FILE_REVERSE)[0][0]
 
-    def test_sorted(self):
-        start = time.perf_counter()
-        main('sort.txt')
-        print(f'\nЗатрачено времени: {round(time.perf_counter() - start, 6)} c.')
-        print(f"Память: {psutil.Process().memory_info().rss / 1024 ** 2:.2f} МБ")
-        with open('sort.txt') as f:
-            f.seek(1)
-            lst = [int(x) for x in f.readlines()[1].split()]
-        with open('output.txt') as f:
-            self.assertEqual(f.readline().strip(), ' '.join([str(x) for x in sorted(lst)]))
+        # when
+        result = merge_sort(lst)
 
-    def test_rand(self):
-        start = time.perf_counter()
-        main('rand.txt')
-        print(f'\nЗатрачено времени: {round(time.perf_counter() - start, 6)} c.')
-        print(f"Память: {psutil.Process().memory_info().rss / 1024 ** 2:.2f} МБ")
-        with open('rand.txt') as f:
-            f.seek(1)
-            lst = [int(x) for x in f.readlines()[1].split()]
-        with open('output.txt') as f:
-            self.assertEqual(f.readline().strip(), ' '.join([str(x) for x in sorted(lst)]))
+        # then
+        self.assertTrue(is_sorted(result))
+
+    def test_should_merge_sort_sorted_file(self):
+        # given
+        lst = read_array(FILE_SORTED)[0][0]
+
+        # when
+        result = (merge_sort(lst))
+
+        # then
+        self.assertTrue(is_sorted(result))
+
+    def test_should_merge_sort_randomized_file(self):
+        # given
+        lst = read_array(FILE_RAND)[0][0]
+
+        # when
+        result = merge_sort(lst)
+
+        # then
+        self.assertTrue(is_sorted(result))
+
+    @classmethod
+    def tearDownClass(cls):
+        lst, length = read_array(FILE_SAMPLE)[0]
+        write_vars(FILE_INPUT, length, lst)
