@@ -1,5 +1,12 @@
 import unittest
+import os
 from lab6.task1.src.main import execute
+from lab6.utils import write_vars, read_lines
+
+
+CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
+FILE_INPUT = os.path.join(CURRENT_DIR, '../txtf/input.txt')
+FILE_SAMPLE = os.path.join(CURRENT_DIR, '../txtf/sample.txt')
 
 
 class Lab6Task1TestCase(unittest.TestCase):
@@ -14,3 +21,7 @@ class Lab6Task1TestCase(unittest.TestCase):
 
         # then
         self.assertEqual(result, expected_result)
+
+    @classmethod
+    def tearDownClass(cls):
+        write_vars(FILE_INPUT, *read_lines(FILE_SAMPLE))
