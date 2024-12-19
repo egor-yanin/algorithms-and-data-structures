@@ -1,5 +1,11 @@
 from math import floor
 from lab2.utils import read_array, write_vars
+import os
+
+
+CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
+FILE_INPUT = os.path.join(CURRENT_DIR, '../txtf/input.txt')
+FILE_OUTPUT = os.path.join(CURRENT_DIR, '../txtf/output.txt')
 
 
 def merge(lst, p, q, r):
@@ -24,7 +30,9 @@ def merge(lst, p, q, r):
     return lst
 
 
-def merge_sort(lst, p, r):
+def merge_sort(lst, p=0, r=-1):
+    if r == -1:
+        r = len(lst) - 1
     if p < r:
         q = floor((p + r) / 2)
         lst = merge_sort(lst, p, q)
@@ -35,6 +43,6 @@ def merge_sort(lst, p, r):
         return lst
 
 
-def main(file):
-    m, n = read_array(file, with_len=True)[0]
-    write_vars('../tests/output.txt', merge_sort(m, 0, n - 1))
+def task1():
+    lst, n = read_array(FILE_INPUT, with_len=True)[0]
+    write_vars(FILE_OUTPUT, merge_sort(lst))
