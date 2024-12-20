@@ -46,3 +46,7 @@ def merge_sort(lst, p=0, r=-1):
 def task1():
     lst, n = read_array(FILE_INPUT, with_len=True)[0]
     write_vars(FILE_OUTPUT, merge_sort(lst))
+
+
+if __name__ == '__main__':
+    task1()
