@@ -31,7 +31,8 @@
    ```
 2. Перейдите в папку с проектом:
    ```bash
-   cd algorithms-and-data-structures/lab3/task1
+    $env:PYTHONPATH = (Get-Location).Path
+    cd ./lab3/task1
    ```
 3. Запустите программу:
    ```bash

@@ -4,9 +4,9 @@ import sys
 import os
 
 sys.setrecursionlimit(10**6)
-current_script_dir = os.path.dirname(os.path.abspath(__file__))
-file_input = os.path.join(current_script_dir, '../txtf/input.txt')
-file_output = os.path.join(current_script_dir, '../txtf/output.txt')
+CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
+FILE_INPUT = os.path.join(CURRENT_DIR, '../txtf/input.txt')
+FILE_OUTPUT = os.path.join(CURRENT_DIR, '../txtf/output.txt')
 
 
 def partition(lst, start, end):
@@ -70,9 +70,9 @@ def randomized_quick_sort(lst, start=0, end=-1, part3=False):
 
 @print_time_memory
 def task1():
-    a = read_array(file_input)[0][0]
-    randomized_quick_sort(a, 0, len(a) - 1)
-    write_vars(file_output, a)
+    lst = read_array(FILE_INPUT)[0][0]
+    randomized_quick_sort(lst, 0, len(lst) - 1)
+    write_vars(FILE_OUTPUT, lst)
 
 
 if __name__ == '__main__':

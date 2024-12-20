@@ -4,9 +4,14 @@ import unittest
 import os
 
 
-current_script_dir = os.path.dirname(os.path.abspath(__file__))
-file_input = os.path.join(current_script_dir, '../txtf/input.txt')
-file_output = os.path.join(current_script_dir, '../txtf/output.txt')
+CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
+FILE_INPUT = os.path.join(CURRENT_DIR, '../txtf/input.txt')
+FILE_OUTPUT = os.path.join(CURRENT_DIR, '../txtf/output.txt')
+FILE_TEST = os.path.join(CURRENT_DIR, '../txtf/partition3test.txt')
+FILE_WORST = os.path.join(CURRENT_DIR, '../txtf/worst_case.txt')
+FILE_AVERAGE = os.path.join(CURRENT_DIR, '../txtf/average_case.txt')
+FILE_BEST = os.path.join(CURRENT_DIR, '../txtf/best_case.txt')
+FILE_SAMPLE = os.path.join(CURRENT_DIR, '../txtf/sample.txt')
 
 
 class Lab3Task1TestCase(unittest.TestCase):
@@ -15,10 +20,10 @@ class Lab3Task1TestCase(unittest.TestCase):
         # given
         expected_partition = [3, 5]
         expected_result = [1, 2, 1, 3, 3, 3, 5, 4]
-        file = os.path.join(current_script_dir, '../txtf/partition3test.txt')
+        path = FILE_TEST
 
         # when
-        a1 = read_array(file)[0][0]
+        a1 = read_array(path)[0][0]
         m1, m2 = partition3(a1, 0, len(a1) - 1)
 
         # then
@@ -27,7 +32,7 @@ class Lab3Task1TestCase(unittest.TestCase):
 
     def test_should_randomized_quick_sort_worst_case(self):
         # given
-        path = os.path.join(current_script_dir, '../txtf/worst_case.txt')
+        path = FILE_WORST
         lst = read_array(path, with_len=True)[0][0]
 
         # when
@@ -38,7 +43,7 @@ class Lab3Task1TestCase(unittest.TestCase):
 
     def test_should_randomized_quick_sort_average_case(self):
         # given
-        path = os.path.join(current_script_dir, '../txtf/average_case.txt')
+        path = FILE_AVERAGE
         lst = read_array(path, with_len=True)[0][0]
 
         # when
@@ -49,7 +54,7 @@ class Lab3Task1TestCase(unittest.TestCase):
 
     def test_should_randomized_quick_sort_best_case(self):
         # given
-        path = os.path.join(current_script_dir, '../txtf/best_case.txt')
+        path = FILE_BEST
         lst = read_array(path, with_len=True)[0][0]
 
         # when
@@ -60,7 +65,7 @@ class Lab3Task1TestCase(unittest.TestCase):
 
     def test_should_quick_sort_worst_case(self):
         # given
-        path = os.path.join(current_script_dir, '../txtf/worst_case.txt')
+        path = FILE_WORST
         lst = read_array(path, with_len=True)[0][0]
 
         # when
@@ -71,7 +76,7 @@ class Lab3Task1TestCase(unittest.TestCase):
 
     def test_should_quick_sort_average_case(self):
         # given
-        path = os.path.join(current_script_dir, '../txtf/average_case.txt')
+        path = FILE_AVERAGE
         lst = read_array(path, with_len=True)[0][0]
 
         # when
@@ -82,7 +87,7 @@ class Lab3Task1TestCase(unittest.TestCase):
 
     def test_should_quick_sort_best_case(self):
         # given
-        path = os.path.join(current_script_dir, '../txtf/best_case.txt')
+        path = FILE_BEST
         lst = read_array(path, with_len=True)[0][0]
 
         # when
@@ -93,6 +98,5 @@ class Lab3Task1TestCase(unittest.TestCase):
 
     @classmethod
     def tearDownClass(cls):
-        file_sample = os.path.join(current_script_dir, '../txtf/sample.txt')
-        data_sample = read_array(file_sample)
-        write_vars(file_input, *data_sample[0][::-1])
+        data_sample = read_array(FILE_SAMPLE)
+        write_vars(FILE_INPUT, *data_sample[0][::-1])
