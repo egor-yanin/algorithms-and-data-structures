@@ -24,7 +24,7 @@ def binary_search(lst, key, low=0, high=None):
         return binary_search(lst, key, mid + 1, high)
 
 
-def task2():
+def task4():
     input_data = read_array(FILE_INPUT, num=2, with_len=True)
     lst, search_list = input_data[0][0], input_data[1][0]
     ans = []
@@ -34,4 +34,4 @@ def task2():
 
 
 if __name__ == '__main__':
-    task2()
+    task4()
