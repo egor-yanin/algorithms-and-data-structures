@@ -1,4 +1,10 @@
-from lab2.utils import read_array, write_vars
+from lab2.utils import read_array, write_vars, print_time_memory
+import os
+
+
+CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
+FILE_INPUT = os.path.join(CURRENT_DIR, '../txtf/input.txt')
+FILE_OUTPUT = os.path.join(CURRENT_DIR, '../txtf/output.txt')
 
 
 def majority(lst):
@@ -19,10 +25,10 @@ def majority(lst):
     return None, 0
 
 
-def main(file='input.txt'):
-    A = read_array(file, with_len=True)[0][0]
-    m = majority(A)
+def task5():
+    lst = read_array(FILE_INPUT, with_len=True)[0][0]
+    m = majority(lst)
     if m[0] is None:
-        write_vars('../tests/output.txt', '0')
+        write_vars(FILE_OUTPUT, '0')
     else:
-        write_vars('../tests/output.txt', '1')
+        write_vars(FILE_OUTPUT, '1')
