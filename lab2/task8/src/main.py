@@ -1,31 +1,37 @@
 from lab2.utils import read_array, write_vars
+import os
 
 
-def addition(A, B, sign=True):
-    if len(A) != len(B):
-        if len(A) > len(B):
-            n = len(A)
-            B = (0,) * (n-len(B)) + B
+CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
+FILE_INPUT = os.path.join(CURRENT_DIR, '../txtf/input.txt')
+FILE_OUTPUT = os.path.join(CURRENT_DIR, '../txtf/output.txt')
+
+
+def addition(polynom_a, polynom_b, sign_is_plus=True):
+    if len(polynom_a) != len(polynom_b):
+        if len(polynom_a) > len(polynom_b):
+            n = len(polynom_a)
+            polynom_b = (0,) * (n - len(polynom_b)) + polynom_b
         else:
-            n = len(B)
-            A = (0,) * (n - len(A)) + A
-    if sign:
-        return tuple(a + b for a, b in zip(A, B))
+            n = len(polynom_b)
+            polynom_a = (0,) * (n - len(polynom_a)) + polynom_a
+    if sign_is_plus:
+        return tuple(a + b for a, b in zip(polynom_a, polynom_b))
     else:
-        return tuple(a - b for a, b in zip(A, B))
+        return tuple(a - b for a, b in zip(polynom_a, polynom_b))
 
 
-def multiply(A, B):
-    if len(A) == len(B) == 1:
-        return (A[0] * B[0], )
-    n = len(A) // 2 * 2
-    mid = len(A) // 2
-    if len(A) % 2 == 0:
-        a_1, a_2 = A[:mid], A[mid:]
-        b_1, b_2 = B[:mid], B[mid:]
+def multiply(polynom_a, polynom_b):
+    if len(polynom_a) == len(polynom_b) == 1:
+        return (polynom_a[0] * polynom_b[0],)
+    n = len(polynom_a) - (len(polynom_a) % 2)
+    mid = len(polynom_a) // 2
+    if len(polynom_a) % 2 == 0:
+        a_1, a_2 = polynom_a[:mid], polynom_a[mid:]
+        b_1, b_2 = polynom_b[:mid], polynom_b[mid:]
     else:
-        a_1, a_2 = A[:mid+1], A[mid+1:]
-        b_1, b_2 = B[:mid+1], B[mid+1:]
+        a_1, a_2 = polynom_a[:mid + 1], polynom_a[mid + 1:]
+        b_1, b_2 = polynom_b[:mid + 1], polynom_b[mid + 1:]
     c_1 = multiply(a_1, b_1)
     c_3 = multiply(a_2, b_2)
     add_1 = addition(a_1, a_2)
@@ -37,7 +43,11 @@ def multiply(A, B):
     return addition(addition(m_1, m_2), m_3)
 
 
-def main(file='input.txt'):
-    input_data = read_array(file, 1, 2)
+def task8():
+    input_data = read_array(FILE_INPUT, 1, 2, with_len=False)
     A, B = map(tuple, input_data)
-    write_vars('../tests/output.txt', multiply(A, B))
+    write_vars(FILE_OUTPUT, multiply(A, B))
+
+
+if __name__ == '__main__':
+    task8()
