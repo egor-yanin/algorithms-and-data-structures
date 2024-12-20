@@ -53,3 +53,21 @@ def is_sorted(lst, reverse=False):
     if reverse:
         return all(lst[i] >= lst[i + 1] for i in range(len(lst) - 1))
     return all(lst[i] <= lst[i + 1] for i in range(len(lst) - 1))
+
+
+def read_lines(file, num=-1, start=0, data_type=str):
+    with open(file) as f:
+        if num == -1:
+            return [data_type(x.strip()) for x in f.readlines()[start:]]
+        else:
+            return [data_type(x.strip()) for x in f.readlines()[start:start+num]]
+
+
+def read_stocks(input_path):
+    lst, date = [], []
+    for s in read_lines(input_path):
+        data = list(s.split())
+        lst.append(float(data[4]))
+        date.append(data[2])
+    delta = [lst[i] - lst[i-1] for i in range(1, len(lst))]
+    return delta
