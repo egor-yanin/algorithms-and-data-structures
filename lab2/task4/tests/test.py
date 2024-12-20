@@ -1,4 +1,4 @@
-from lab2.task4.src.main import binary_search, task2
+from lab2.task4.src.main import binary_search, task4
 from lab2.utils import write_vars, read_array
 import unittest
 import os
@@ -30,7 +30,7 @@ class Lab2Task4TestCase(unittest.TestCase):
         expected_result = [3, 1, -1]
 
         # when
-        task2()
+        task4()
         result = read_array(FILE_OUTPUT, with_len=False)[0]
 
         # then
