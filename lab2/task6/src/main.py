@@ -44,7 +44,7 @@ def find_max_subarray(lst, low=0, high=-10):
 
 
 def task6():
-    with open(FILE_INPUT) as fin, open(FILE_OUTPUT, 'w', encoding='UTF-16') as fout:
+    with open(FILE_INPUT) as fin, open(FILE_OUTPUT, 'w', encoding='windows-1251') as fout:
         lst, date = [], []
         name = str()
         for s in fin.readlines():
