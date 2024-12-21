@@ -25,7 +25,7 @@ def execute(commands: list[str]) -> list[str]:
     return result
 
 
-def task():
+def task1():
     command_list = read_lines(FILE_INPUT, start=1)
     ans = execute(command_list)
     write_vars(FILE_OUTPUT, *ans)
