@@ -13,7 +13,7 @@ FILE_SAMPLE = os.path.join(CURRENT_DIR, '../txtf/sample.txt')
 
 class Lab3Task5TestCase(unittest.TestCase):
 
-    def test_h_index(self):
+    def test_should_h_index(self):
         # given
         data = read_array(FILE_TEST, with_len=False)[0]
         expected_result = 5
