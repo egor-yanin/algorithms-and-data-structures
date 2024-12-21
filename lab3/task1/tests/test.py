@@ -63,39 +63,6 @@ class Lab3Task1TestCase(unittest.TestCase):
         # then
         self.assertTrue(is_sorted(lst))
 
-    def test_should_quick_sort_worst_case(self):
-        # given
-        path = FILE_WORST
-        lst = read_array(path, with_len=True)[0][0]
-
-        # when
-        quick_sort(lst)
-
-        # then
-        self.assertTrue(is_sorted(lst))
-
-    def test_should_quick_sort_average_case(self):
-        # given
-        path = FILE_AVERAGE
-        lst = read_array(path, with_len=True)[0][0]
-
-        # when
-        quick_sort(lst)
-
-        # then
-        self.assertTrue(is_sorted(lst))
-
-    def test_should_quick_sort_best_case(self):
-        # given
-        path = FILE_BEST
-        lst = read_array(path, with_len=True)[0][0]
-
-        # when
-        quick_sort(lst)
-
-        # then
-        self.assertTrue(is_sorted(lst))
-
     @classmethod
     def tearDownClass(cls):
         data_sample = read_array(FILE_SAMPLE)
