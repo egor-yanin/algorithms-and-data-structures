@@ -42,7 +42,8 @@
    ```
 2. Перейдите в папку с проектом:
    ```bash
-   cd algorithms-and-data-structures/lab3/task7
+    $env:PYTHONPATH = (Get-Location).Path
+    cd ./lab3/task7
    ```
 3. Запустите программу:
    ```bash
