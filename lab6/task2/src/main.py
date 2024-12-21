@@ -14,7 +14,7 @@ def execute(commands: list[str]) -> list[str]:
     for command in commands:
         words = command.split()
         if words[0] == 'add':
-            name = ''.join(words[2:])
+            name = ' '.join(words[2:])
             reversed_phone_book[words[1]] = name
         if words[0] == 'del':
             reversed_phone_book.pop(words[1], None)
