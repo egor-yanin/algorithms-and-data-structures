@@ -39,7 +39,8 @@ h из его/её Np статей цитируются как минимум h 
    ```
 2. Перейдите в папку с проектом:
    ```bash
-   cd algorithms-and-data-structures/lab3/task5
+    $env:PYTHONPATH = (Get-Location).Path
+    cd ./lab3/task5
    ```
 3. Запустите программу:
    ```bash

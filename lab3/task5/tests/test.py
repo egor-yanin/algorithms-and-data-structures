@@ -4,29 +4,29 @@ from lab3.utils import *
 import os
 
 
-current_script_dir = os.path.dirname(os.path.abspath(__file__))
-file_input = os.path.join(current_script_dir, '../txtf/input.txt')
-file_output = os.path.join(current_script_dir, '../txtf/output.txt')
+CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
+FILE_INPUT = os.path.join(CURRENT_DIR, '../txtf/input.txt')
+FILE_OUTPUT = os.path.join(CURRENT_DIR, '../txtf/output.txt')
+FILE_TEST = os.path.join(CURRENT_DIR, '../txtf/test.txt')
+FILE_SAMPLE = os.path.join(CURRENT_DIR, '../txtf/sample.txt')
 
 
 class Lab3Task5TestCase(unittest.TestCase):
 
     def test_h_index(self):
         # given
-        path = os.path.join(current_script_dir, '../txtf/test.txt')
-        data = read_array(path, with_len=False)[0]
+        data = read_array(FILE_TEST, with_len=False)[0]
         expected_result = 5
 
         # when
-        write_vars(file_input, data)
+        write_vars(FILE_INPUT, data)
         task5()
-        result = read_int(file_output)
+        result = read_int(FILE_OUTPUT)
 
         # then
         self.assertEqual(result, expected_result)
 
     @classmethod
     def tearDownClass(cls):
-        file_sample = os.path.join(current_script_dir, '../txtf/sample.txt')
-        data_sample = read_str_lines(file_sample)
-        write_vars(file_input, data_sample[0])
+        data_sample = read_str_lines(FILE_SAMPLE)
+        write_vars(FILE_INPUT, data_sample[0])

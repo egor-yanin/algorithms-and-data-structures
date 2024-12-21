@@ -2,9 +2,9 @@ from lab3.utils import read_array, write_vars, print_time_memory
 import os
 
 
-current_script_dir = os.path.dirname(os.path.abspath(__file__))
-file_input = os.path.join(current_script_dir, '../txtf/input.txt')
-file_output = os.path.join(current_script_dir, '../txtf/output.txt')
+CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
+FILE_INPUT = os.path.join(CURRENT_DIR, '../txtf/input.txt')
+FILE_OUTPUT = os.path.join(CURRENT_DIR, '../txtf/output.txt')
 
 
 @print_time_memory
@@ -24,8 +24,8 @@ def h_index(citations):
 
 
 def task5():
-    arr = read_array(file_input, with_len=False)[0]
-    write_vars(file_output, h_index(arr))
+    arr = read_array(FILE_INPUT, with_len=False)[0]
+    write_vars(FILE_OUTPUT, h_index(arr))
 
 
 if __name__ == '__main__':
