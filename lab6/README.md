@@ -4,6 +4,9 @@
 ## Навигация
 
 - [ ] [Задача 1 - Множество](https://github.com/egor-yanin/algorithms-and-data-structures/tree/main/lab6/task1)
+- [ ] [Задача 2 - Телефонная книга](https://github.com/egor-yanin/algorithms-and-data-structures/tree/main/lab6/task2)
+- [ ] [Задача 5 - Выборы в США](https://github.com/egor-yanin/algorithms-and-data-structures/tree/main/lab6/task5)
+- [ ] [Задача 6 - Фибоначчи возвращается](https://github.com/egor-yanin/algorithms-and-data-structures/tree/main/lab6/task6)
 
 ## Описание
 Лабораторная работа посвящена ознакомлению с такими понятиями, как множество, словари, хеш-таблицы и хеш-функции.
