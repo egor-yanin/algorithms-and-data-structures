@@ -8,6 +8,8 @@
 4. [Лабараторная №3. Быстрая сортировка, сортировка за линейное время](https://github.com/egor-yanin/algorithms-and-data-structures/tree/main/lab3)
 5. [Лабараторная №4. Стек, очередь, связанный список](https://github.com/egor-yanin/algorithms-and-data-structures/tree/main/lab4)
 6. [Лабараторная №5. Деревья. Пирамида, пирамидальная сортировка. Очередь с приоритетами](https://github.com/egor-yanin/algorithms-and-data-structures/tree/main/lab5)
+7. [Лабараторная №6. Хэширование. Хэш-таблицы](https://github.com/egor-yanin/algorithms-and-data-structures/tree/main/lab6)
+8. [Лабараторная №7. Динамическое программирование №1](https://github.com/egor-yanin/algorithms-and-data-structures/tree/main/lab7)
 
 ### Описание 
 
