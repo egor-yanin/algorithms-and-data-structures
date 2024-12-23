@@ -132,4 +132,3 @@ if __name__ == '__main__':
     b.push(1)
     b.insert_after(b.get_node(1), 5)
     b.insert_before(b.get_node(5), 4)
-    pass

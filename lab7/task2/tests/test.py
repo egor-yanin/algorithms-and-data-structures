@@ -20,7 +20,6 @@ class Lab7Task2TestCase(unittest.TestCase):
 
         # then
         self.assertEqual(result, expected_result)
-        pass
 
     @classmethod
     def tearDownClass(cls):

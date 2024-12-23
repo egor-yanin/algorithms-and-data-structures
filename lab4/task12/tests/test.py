@@ -59,7 +59,6 @@ class Lab4Task12TestCase(unittest.TestCase):
 
         # then
         self.assertEqual(result, expected_result)
-        pass
 
     def test_task12(self):
         # given
@@ -73,7 +72,6 @@ class Lab4Task12TestCase(unittest.TestCase):
 
         # then
         self.assertEqual(result, expected_result)
-        pass
 
     @classmethod
     def tearDownClass(cls):

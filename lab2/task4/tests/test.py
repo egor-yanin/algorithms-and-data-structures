@@ -40,4 +40,3 @@ class Lab2Task4TestCase(unittest.TestCase):
     def tearDownClass(cls):
         data = read_array(FILE_SAMPLE, num=2)
         write_vars(FILE_INPUT, data[0][1], data[0][0], data[1][1], data[1][0])
-        pass
