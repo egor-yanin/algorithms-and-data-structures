@@ -7,7 +7,7 @@ from lab3.utils import read_str_lines
 import os
 
 
-TASKS = {2: task2, 1: task1, 5: task5, 12: task12}
+TASKS = {2: task2, 1: task1, 5: task5, 12: task12, 4: task4}
 current_path = os.path.dirname(os.path.abspath(__file__))
 
 
