@@ -3,8 +3,10 @@
 Студент ИТМО,  Янин Егор Вячеславович  468187
 ## Навигация
 
+- [ ] [Задача 1 - Обмен монет](https://github.com/egor-yanin/algorithms-and-data-structures/tree/main/lab7/task1)
 - [ ] [Задача 2 - Примитивный калькулятор](https://github.com/egor-yanin/algorithms-and-data-structures/tree/main/lab7/task2)
 - [ ] [Задача 5 - Наибольшая общая подпоследовательность трех последовательностей](https://github.com/egor-yanin/algorithms-and-data-structures/tree/main/lab7/task5)
+- [ ] [Задача 6 - Наибольшая возрастающая последовательность](https://github.com/egor-yanin/algorithms-and-data-structures/tree/main/lab7/task6)
 
 ## Описание
 В данной лабораторной работе изучается мощный инструмент, динамическое
