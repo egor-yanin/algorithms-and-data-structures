@@ -15,8 +15,8 @@ def task_path(task_number):
 
 
 def run_task(task_number):
-    file_input = os.path.join(task_path(task_number), 'txtf/input.txt')
-    file_output = os.path.join(task_path(task_number), 'txtf/output.txt')
+    file_input = os.path.join(task_path(task_number), '../txtf/input.txt')
+    file_output = os.path.join(task_path(task_number), '../txtf/output.txt')
 
     print(f'Задача №{task_number}')
     print('Входные данные: ')

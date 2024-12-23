@@ -1,5 +1,5 @@
 import os
-from lab5.utils import read_lines, write_vars
+from lab5.utils import read_lines, write_vars, print_time_memory
 from lab5.task4.src.main import LowerHeap
 
 
@@ -67,6 +67,7 @@ def execute(commands: list[str]) -> list:
     return result
 
 
+@print_time_memory
 def task6():
     command_list = read_lines(file_input, start=1)
     ans = execute(command_list)
