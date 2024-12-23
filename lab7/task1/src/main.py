@@ -1,4 +1,4 @@
-from lab7.utils import read_array, write_vars
+from lab7.utils import read_array, write_vars, print_time_memory
 import os
 
 
@@ -7,6 +7,7 @@ FILE_INPUT = os.path.join(CURRENT_DIR, '../txtf/input.txt')
 FILE_OUTPUT = os.path.join(CURRENT_DIR, '../txtf/output.txt')
 
 
+@print_time_memory
 def change_money(money: int, coins: list[int]):
     min_coins = [0] * (money + 1)
     for i in range(1, money + 1):
